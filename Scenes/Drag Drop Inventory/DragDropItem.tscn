@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://byd5tc5euvhts"]
+
+[ext_resource type="Script" path="res://Scenes/Drag Drop Inventory/DragDropItem.gd" id="1_ay632"]
+[ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://1x1 Misc Item Error.png" id="2_7i2ha"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2amd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1706"]
+texture = SubResource("CanvasTexture_e2amd")
+modulate_color = Color(0, 0, 0, 0.196078)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnb3q"]
+
+[node name="DragDropItem" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
+script = ExtResource("1_ay632")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_7i2ha")
+stretch_mode = 2
+
+[node name="ItemPickupButton" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_j1706")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hnb3q")
+action_mode = 0
+
+[node name="ItemContextButton" type="MenuButton" parent="TextureRect/ItemPickupButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+button_mask = 2
+
+[node name="Position" type="Node2D" parent="."]
+
+[connection signal="button_down" from="TextureRect/ItemPickupButton" to="." method="_on_item_pickup_button_press"]
+[connection signal="button_up" from="TextureRect/ItemPickupButton" to="." method="_on_item_pickup_button_release"]
+[connection signal="mouse_entered" from="TextureRect/ItemPickupButton" to="." method="_on_item_pickup_button_mouse_entered"]
+[connection signal="button_down" from="TextureRect/ItemPickupButton/ItemContextButton" to="." method="_on_item_context_button_press"]
