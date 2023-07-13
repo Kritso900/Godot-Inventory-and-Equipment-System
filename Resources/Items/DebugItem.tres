@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://chss8lyk47l3p"]
+
+[ext_resource type="Script" path="res://Scripts/ItemResource.gd" id="2_td1xm"]
+
+[resource]
+script = ExtResource("2_td1xm")
+itemName = "n/a"
+itemTooltip = "Item hasn't been set"
+itemType = 2
+itemDragDropGridSize = Vector2i(1, 1)
+exampleInt = 0
+exampleFloat = 0.0
+exampleBool = false

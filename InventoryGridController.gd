@@ -24,7 +24,6 @@ func _ready():
 	SignalBus.inventoryItemPlace.connect(released)
 	gridDimensions = Vector2i(GridRef.columns, GridRef.get_children(false).size()/GridRef.columns)
 	#if GridRef.get_children(false).size()%GridRef.columns: push_error("Grid is not a rectangle, please fix this")
-	print(gridDimensions)
 	gridCellSize = $GridContainer/TextureRect.size
 	gridCellOffset = gridCellSize/2
 	for _tile in GridRef.get_children(false):
@@ -47,11 +46,11 @@ func _ready():
 #			pass
 #
 #		pass
-	print(gridCellDict)
 	
 	for _x in gridDimensions.x:
 		for _y in gridDimensions.y:
 			pass
+	CreateItem(preload("res://Resources/Items/Estoc.tres"))
 	pass # Replace with function body.
 
 
@@ -68,7 +67,6 @@ func PickUp(item:Node):
 	pass
 
 func Place(item:Node):
-	### Called when an item is placed into this inventory
 	pass
 	
 	
@@ -81,13 +79,37 @@ func GetMouseLocationOnGrid():
 
 
 func _on_mouse_entered_inventory_grid():
-	pass # Replace with function body.
+	mouseInGrid = true
 
 
 func _on_mouse_exited_inventory_grid():
-	pass # Replace with function body.
+	mouseInGrid = false
 
-
-func CreateItem(item:ItemResource):
-	
-	pass
+func CreateItem(_item:ItemResource):
+	var _dropItem = dropItem.instantiate()
+	gridCellDict[Vector2i(3,3)].occupied = true
+	var _occupied:bool = false
+	for _gridPos in gridCellDict:
+		if !gridCellDict[_gridPos].occupied:
+			var _exists:bool = true
+		
+			for _gridPoss in _item.itemDragDropGridSize.x:
+				if _gridPoss != 0: if _gridPoss+_gridPos.x > gridDimensions.x-1: _exists = false
+			for _gridPoss in _item.itemDragDropGridSize.y:
+				if _gridPoss != 0: if _gridPoss+_gridPos.y > gridDimensions.y-1: _exists = false
+				
+			if _exists:
+				
+				for _gridPoss in _item.itemDragDropGridSize.x:
+					if _gridPoss != 0: if gridCellDict[_gridPoss+_gridPos.x].occupied: _occupied = true
+					for _gridPosss in _item.itemDragDropGridSize.y:
+						if _gridPosss != 0: if gridCellDict[Vector2i(_gridPos.x + _gridPoss, _gridPos.y + _gridPosss)].occupied: _occupied = true
+				
+				#if _gridPos.x + _gridPoss.x > gridDimensions.x:
+				#	pass
+				#if gridCellDict[_gridPos + _gridPoss].occupied:
+				#	_occupied = true
+		else:
+			_occupied = true
+	print(_occupied)
+	_dropItem.setup(gridCellSize)

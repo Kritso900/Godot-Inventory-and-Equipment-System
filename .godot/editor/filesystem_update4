@@ -7,3 +7,7 @@ res://InventoryGridController.gd
 res://DragDropController.gd
 res://Scripts/ItemResource.gd
 res://TestCharacter.gd
+res://Resources/Items/Breastplate.tres
+res://Resources/Items/Estoc.tres
+res://Resources/Items/TestItem.tres
+res://Resources/Items/DebugItem.tres

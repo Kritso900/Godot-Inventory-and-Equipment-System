@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1689145463
+::res://::1689206428
 1x1 Misc Item Error.png::CompressedTexture2D::576916137838480972::1683462563::1684068525::1::::<><>::
 1x2 Weapon Estoc.png::CompressedTexture2D::4012408156447906977::1684047761::1684068504::1::::<><>::
 2x3 Chest Breastplate.png::CompressedTexture2D::4392716315935054470::1684068498::1684068501::1::::<><>::
@@ -10,19 +10,19 @@ InventoryGridBackground.png::CompressedTexture2D::1641111930191926165::168397099
 InventoryGridController.gd::GDScript::-1::1689144595::0::1::::<>Node<>::
 nS_Button.png::CompressedTexture2D::1872867111144381034::1679784116::1689145463::1::::<><>::
 nS_MenuBack.png::CompressedTexture2D::8981881777848083710::1679785401::1689145454::1::::<><>::
-TestCharacter.gd::GDScript::-1::1688991678::0::1::::<>Node<>::
+TestCharacter.gd::GDScript::-1::1689206428::0::1::::<>Node<>::
 ::res://Resources/::1688719303
-::res://Resources/Items/::1688719303
-Breastplate.tres::Resource/Resource::2935078688013959542::1686303353::0::1::::<><>::uid://b3t4npyaj87sk<>res://Scripts/ItemResource.gd
-Estoc.tres::Resource/Resource::1253255872465528097::1686302991::0::1::::<><>::uid://bxfv1ngqptb50<>res://Scripts/ItemResource.gd
-TestItem.tres::Resource::867987644198170676::1683462913::0::1::::<><>::res://Scripts/ItemResource.gd
-::res://Scenes/::1689144595
-control.tscn::PackedScene::2110518039212643268::1689144595::0::1::::<><>::res://Scripts/ItemResource.gd<>uid://d303vkpxby4mv<>uid://byd5tc5euvhts<>uid://r4c686v5x0yv<>uid://bh21k1wdlf7ne
-::res://Scenes/Drag Drop Inventory/::1689145356
-DragDropItem.gd::GDScript::-1::1689141650::0::1::::<>Control<>::
-DragDropItem.tscn::PackedScene::4079001655735379868::1689144595::0::1::::<><>::res://Scenes/Drag Drop Inventory/DragDropItem.gd<>uid://ihpyvr2x2grk
-InventoryGridContainer.tscn::PackedScene::9177897243718064145::1689145356::0::1::::<><>::res://InventoryGridController.gd<>uid://cntle40kd4plu<>uid://xm74yaytlqj2<>uid://dihc4ted4eodb
-::res://Scripts/::1688719303
+::res://Resources/Items/::1689214567
+Breastplate.tres::Resource/ItemResource::2935078688013959542::1689214320::0::1::::<><>::uid://b3t4npyaj87sk<>res://Scripts/ItemResource.gd
+Estoc.tres::Resource/ItemResource::1253255872465528097::1689214320::0::1::::<><>::uid://bxfv1ngqptb50<>res://Scripts/ItemResource.gd
+DebugItem.tres::Resource/ItemResource::5302474524820699651::1689214626::0::1::::<><>::uid://bxfv1ngqptb50<>res://Scripts/ItemResource.gd
+::res://Scenes/::1689214499
+control.tscn::PackedScene::2110518039212643268::1689214499::0::1::::<><>::res://Scripts/ItemResource.gd<>uid://d303vkpxby4mv<>uid://byd5tc5euvhts<>uid://r4c686v5x0yv<>uid://bh21k1wdlf7ne
+::res://Scenes/Drag Drop Inventory/::1689214564
+DragDropItem.gd::GDScript::-1::1689214497::0::1::::<>Control<>::
+DragDropItem.tscn::PackedScene::4079001655735379868::1689214499::0::1::::<><>::res://Scenes/Drag Drop Inventory/DragDropItem.gd<>uid://ihpyvr2x2grk
+InventoryGridContainer.tscn::PackedScene::9177897243718064145::1689214564::0::1::::<><>::res://InventoryGridController.gd<>uid://d075jsnfwo34e<>uid://xm74yaytlqj2<>uid://dihc4ted4eodb
+::res://Scripts/::1689214564
 Globals.gd::GDScript::-1::1683648713::0::1::::<>Node<>::
-ItemResource.gd::GDScript::-1::1684087335::0::1::::ItemResource<>Resource<>::
+ItemResource.gd::GDScript::-1::1689214564::0::1::::ItemResource<>Resource<>::
 SignalBus.gd::GDScript::-1::1684066581::0::1::::<>Node<>::

@@ -7,8 +7,9 @@
 script = ExtResource("2_rn7em")
 itemUiImage = ExtResource("1_lpo4q")
 itemName = "Plate armour"
-itemTooltip = "Thick and heavy plate armour that has seen many battles, and even more repares"
-itemType = 2
+itemTooltip = "Thick and heavy plate armour that has seen many battles, and even more repairs"
+itemType = 1
+itemDragDropGridSize = Vector2i(3, 3)
 exampleInt = 30
 exampleFloat = 12.0
-exampleBool = true
+exampleBool = false

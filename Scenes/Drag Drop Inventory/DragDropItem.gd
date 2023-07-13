@@ -6,20 +6,15 @@ var isInitialised:bool
 
 @onready var imageRef:TextureRect = $TextureRect
 
-#func _init(_item:ItemResource):
-#	item = _item
-#	imageRef.set_texture(item.itemUiImage)
-#	isInitialised = true
-#	pass
-#
-#func _ready():
-#	if !isInitialised:
-#		pass # Called if object is pre-placed in a scene, this shouldn't happen but is here incase a workaround is needed
-func _ready():
+
+
+
+
+func setup(gridCellSize:Vector2):
 	if(item):
 		imageRef.set_texture(item.itemUiImage)
-
-
+		imageRef.size = gridCellSize
+		$TextureRect/ItemPickupButton.tooltip_text = setupTooltip()
 
 
 func _on_item_pickup_button_press():
@@ -46,4 +41,16 @@ func _on_item_pickup_button_mouse_entered():
 	$Position.global_position
 	pass # Replace with function body.
 
+func setupTooltip():
+	var _tooltipText:String = item.itemName
+	match item.itemType:
+		Globals.ItemTypes.TYPE1:
+			_tooltipText +=  "\nDoes thing: " + ("Yes" if item.exampleBool else "No")
+			_tooltipText +=  "\nThinginess: " + str(item.exampleFloat)
+		Globals.ItemTypes.TYPE2:
+			_tooltipText += "\nDisappointment: " + str(item.exampleInt)
+		Globals.ItemTypes.TYPE3:
+			pass
+	_tooltipText += "\n" + item.itemTooltip
+	return _tooltipText
 
