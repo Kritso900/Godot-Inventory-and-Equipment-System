@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://5cl6n4jpf0dc"]
+[gd_scene load_steps=7 format=3 uid="uid://5cl6n4jpf0dc"]
 
 [ext_resource type="Script" path="res://Scripts/ItemResource.gd" id="3_xw3e1"]
 [ext_resource type="PackedScene" uid="uid://d303vkpxby4mv" path="res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn" id="4_1wufd"]
 [ext_resource type="PackedScene" uid="uid://byd5tc5euvhts" path="res://Scenes/Drag Drop Inventory/DragDropItem.tscn" id="4_pjn73"]
+[ext_resource type="Resource" uid="uid://r4c686v5x0yv" path="res://Resources/Items/Estoc.tres" id="4_vofy3"]
+[ext_resource type="Resource" uid="uid://bh21k1wdlf7ne" path="res://Resources/Items/Breastplate.tres" id="4_xphtf"]
 
 [sub_resource type="Resource" id="Resource_po7yq"]
 script = ExtResource("3_xw3e1")
@@ -23,42 +25,46 @@ grow_vertical = 2
 
 [node name="InventoryGridContainer" parent="." instance=ExtResource("4_1wufd")]
 layout_mode = 0
-offset_right = 384.0
-offset_bottom = 448.0
+offset_left = 94.0
+offset_top = 76.0
+offset_right = 478.0
+offset_bottom = 460.0
 scale = Vector2(1, 0.994057)
 
 [node name="DragDropItem" parent="." instance=ExtResource("4_pjn73")]
 layout_mode = 1
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 2.0
-offset_bottom = 1.0
+offset_left = 96.0
+offset_top = 77.0
+offset_right = 96.0
+offset_bottom = 77.0
 item = SubResource("Resource_po7yq")
 
 [node name="DragDropItem2" parent="." instance=ExtResource("4_pjn73")]
 layout_mode = 1
-offset_left = 260.0
-offset_top = 193.0
-offset_right = 260.0
-offset_bottom = 193.0
+offset_left = 350.0
+offset_top = 267.0
+offset_right = 350.0
+offset_bottom = 267.0
 item = SubResource("Resource_po7yq")
 
 [node name="DragDropItem3" parent="." instance=ExtResource("4_pjn73")]
 layout_mode = 1
-offset_left = 195.0
-offset_top = 125.0
-offset_right = 195.0
-offset_bottom = 125.0
+offset_left = 286.0
+offset_top = 203.0
+offset_right = 286.0
+offset_bottom = 203.0
 item = SubResource("Resource_po7yq")
 
 [node name="DragDropItem4" parent="." instance=ExtResource("4_pjn73")]
-offset_left = 127.0
-offset_top = 192.0
-offset_right = 127.0
-offset_bottom = 192.0
+offset_left = 222.0
+offset_top = 267.0
+offset_right = 222.0
+offset_bottom = 267.0
+item = ExtResource("4_xphtf")
 
 [node name="DragDropItem5" parent="." instance=ExtResource("4_pjn73")]
-offset_left = 130.0
-offset_top = 62.0
-offset_right = 130.0
-offset_bottom = 62.0
+offset_left = 222.0
+offset_top = 139.0
+offset_right = 222.0
+offset_bottom = 139.0
+item = ExtResource("4_vofy3")

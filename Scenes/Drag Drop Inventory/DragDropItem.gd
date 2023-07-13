@@ -4,7 +4,7 @@ var isInitialised:bool
 
 @export var item:ItemResource
 
-@onready var imageRef = $TextureRect
+@onready var imageRef:TextureRect = $TextureRect
 
 #func _init(_item:ItemResource):
 #	item = _item
@@ -15,20 +15,22 @@ var isInitialised:bool
 #func _ready():
 #	if !isInitialised:
 #		pass # Called if object is pre-placed in a scene, this shouldn't happen but is here incase a workaround is needed
-
+func _ready():
+	if(item):
+		imageRef.set_texture(item.itemUiImage)
 
 
 
 
 func _on_item_pickup_button_press():
-	SignalBus.inventoryItemPickup.emit(self)
-	
+	DragDropController.HeldItem = self
+	$TextureRect/ItemPickupButton/ItemContextButton.disabled = true
 	
 
 
 func _on_item_pickup_button_release():
-	print("Release left click")
-	pass # Replace with function body.
+	DragDropController.HeldItem = null
+	$TextureRect/ItemPickupButton/ItemContextButton.disabled = false
 
 
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://r4c686v5x0yv"]
+
+[ext_resource type="Texture2D" uid="uid://bxfv1ngqptb50" path="res://1x2 Weapon Estoc.png" id="1_g7yse"]
+[ext_resource type="Script" path="res://Scripts/ItemResource.gd" id="1_jf2ya"]
+
+[resource]
+script = ExtResource("1_jf2ya")
+itemUiImage = ExtResource("1_g7yse")
+itemName = "Estoc"
+itemTooltip = "A thin thrusting sword, adept at both slashing and piercing"
+itemType = 1
+exampleInt = 2
+exampleFloat = 0.75
+exampleBool = true

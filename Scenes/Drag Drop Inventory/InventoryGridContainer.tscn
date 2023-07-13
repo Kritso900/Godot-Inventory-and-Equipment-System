@@ -176,22 +176,6 @@ texture = ExtResource("3_s7ur0")
 layout_mode = 2
 texture = ExtResource("3_s7ur0")
 
-[node name="TextureRect37" type="TextureRect" parent="GridContainer"]
-layout_mode = 2
-texture = ExtResource("3_s7ur0")
-
-[node name="TextureRect38" type="TextureRect" parent="GridContainer"]
-layout_mode = 2
-texture = ExtResource("3_s7ur0")
-
-[node name="TextureRect39" type="TextureRect" parent="GridContainer"]
-layout_mode = 2
-texture = ExtResource("3_s7ur0")
-
-[node name="TextureRect40" type="TextureRect" parent="GridContainer"]
-layout_mode = 2
-texture = ExtResource("3_s7ur0")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("4_qa63i")
 

@@ -3,13 +3,12 @@
 [ext_resource type="Script" path="res://Scenes/Drag Drop Inventory/DragDropItem.gd" id="1_ay632"]
 [ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://1x1 Misc Item Error.png" id="2_7i2ha"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_e2amd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu758"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1706"]
-texture = SubResource("CanvasTexture_e2amd")
-modulate_color = Color(0, 0, 0, 0.196078)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4lf5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hnb3q"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cfk4h"]
+load_path = "res://.godot/imported/nS_MenuBack.png-4ba04842ce39d60835baa700890424d3.ctex"
 
 [node name="DragDropItem" type="Control"]
 texture_filter = 1
@@ -22,7 +21,7 @@ offset_bottom = -32.0
 script = ExtResource("1_ay632")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
+layout_mode = 2
 offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
@@ -36,8 +35,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_j1706")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hnb3q")
+tooltip_text = "hello"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gu758")
 action_mode = 0
 
 [node name="ItemContextButton" type="MenuButton" parent="TextureRect/ItemPickupButton"]
@@ -49,6 +48,76 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 button_mask = 2
+
+[node name="Tooltip" type="PanelContainer" parent="TextureRect"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_w4lf5")
+
+[node name="Tooltip Background" type="NinePatchRect" parent="TextureRect/Tooltip"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_cfk4h")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Tooltip Margin Container" type="MarginContainer" parent="TextureRect/Tooltip"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Tooltip V Containter" type="VBoxContainer" parent="TextureRect/Tooltip/Tooltip Margin Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="TextureRect/Tooltip/Tooltip Margin Container/Tooltip V Containter"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Example Title"
+vertical_alignment = 1
+
+[node name="Item Type" type="Label" parent="TextureRect/Tooltip/Tooltip Margin Container/Tooltip V Containter"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Example Type"
+vertical_alignment = 1
+
+[node name="Example Int" type="Label" parent="TextureRect/Tooltip/Tooltip Margin Container/Tooltip V Containter"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Example Int"
+
+[node name="Example Float" type="Label" parent="TextureRect/Tooltip/Tooltip Margin Container/Tooltip V Containter"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Example Float"
+
+[node name="Example Bool" type="Label" parent="TextureRect/Tooltip/Tooltip Margin Container/Tooltip V Containter"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Example Bool"
+
+[node name="Text" type="Label" parent="TextureRect/Tooltip/Tooltip Margin Container/Tooltip V Containter"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Example Text
+Example Text"
+vertical_alignment = 1
 
 [node name="Position" type="Node2D" parent="."]
 

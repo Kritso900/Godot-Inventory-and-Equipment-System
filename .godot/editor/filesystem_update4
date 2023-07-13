@@ -1,9 +1,9 @@
-res://Scenes/Inventory Core/InventoryGridContainer.tscn
-res://Scripts/ItemResource.gd
+res://Scenes/Drag Drop Inventory/DragDropItem.tscn
 res://GridTile.gd
 res://Scenes/control.tscn
 res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn
-res://Scenes/Drag Drop Inventory/DragDropItem.tscn
 res://Scenes/Drag Drop Inventory/DragDropItem.gd
-res://Scripts/SignalBus.gd
 res://InventoryGridController.gd
+res://DragDropController.gd
+res://Scripts/ItemResource.gd
+res://TestCharacter.gd
