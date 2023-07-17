@@ -2,12 +2,6 @@ res://Scenes/Drag Drop Inventory/DragDropItem.tscn
 res://GridTile.gd
 res://Scenes/control.tscn
 res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn
-res://Scenes/Drag Drop Inventory/DragDropItem.gd
 res://InventoryGridController.gd
+res://Scenes/Drag Drop Inventory/DragDropItem.gd
 res://DragDropController.gd
-res://Scripts/ItemResource.gd
-res://TestCharacter.gd
-res://Resources/Items/Breastplate.tres
-res://Resources/Items/Estoc.tres
-res://Resources/Items/TestItem.tres
-res://Resources/Items/DebugItem.tres

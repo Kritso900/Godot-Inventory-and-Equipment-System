@@ -12,8 +12,8 @@ var isInitialised:bool
 
 func setup(gridCellSize:Vector2):
 	if(item):
-		imageRef.set_texture(item.itemUiImage)
-		imageRef.size = gridCellSize
+		$TextureRect.set_texture(item.itemUiImage)
+		$TextureRect.size = gridCellSize * Vector2(item.itemDragDropGridSize)
 		$TextureRect/ItemPickupButton.tooltip_text = setupTooltip()
 
 
