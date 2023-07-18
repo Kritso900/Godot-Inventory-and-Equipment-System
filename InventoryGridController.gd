@@ -6,7 +6,7 @@ var currentGridPosition:Vector2i
 var previousRotation:int
 var currentRotation:int
 var mouseInGrid:bool
-var gridCellDict:Dictionary
+@export var gridCellDict:Dictionary
 
 var gridDimensions:Vector2i
 var gridCellSize:Vector2
@@ -32,6 +32,9 @@ func _ready():
 		var _gridPos = Vector2i(_x, _y)
 		print(_tile.position)
 		gridCellDict[_gridPos] = {tileRef = _tile, occupied = false}
+		_tile.position = _gridPos
+		
+	
 #	for _tile in GridRef.get_children(false):
 #		var tile:TextureRect = _tile
 #		if ignoredGridSquares.find(_tile) == -1:
@@ -55,13 +58,19 @@ func _ready():
 	
 	pass # Replace with function body.
 
-var dropItemType = preload("res://Resources/Items/Estoc.tres")
+var dropItemType = preload("res://Resources/Items/Breastplate.tres")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Sprite2D.position = get_viewport().get_mouse_position()
 	if Input.is_action_just_pressed("ui_left"):
-		CreateItem(dropItemType)
-	
+		CreateItem(preload("res://Resources/Items/Breastplate.tres"))
+		
+	if Input.is_action_just_pressed("ui_right"):
+		CreateItem(preload("res://Resources/Items/Estoc.tres"))
+	if Input.is_action_just_pressed("ui_down"):
+		
+		print(gridCellDict[Vector2i(0,0)].occupied, gridCellDict[Vector2i(0,1)].occupied,gridCellDict[Vector2i(0,2)].occupied,gridCellDict[Vector2i(0,3)].occupied,gridCellDict[Vector2i(0,4)].occupied,gridCellDict[Vector2i(0,5)].occupied)
+		print(gridCellDict[Vector2i(1,0)].occupied, gridCellDict[Vector2i(1,1)].occupied,gridCellDict[Vector2i(1,2)].occupied,gridCellDict[Vector2i(1,3)].occupied,gridCellDict[Vector2i(1,4)].occupied,gridCellDict[Vector2i(1,5)].occupied)
 
 var grabbed = Callable(self, "Grab")
 var released = Callable(self, "Release")
@@ -93,37 +102,42 @@ func _on_mouse_exited_inventory_grid():
 func CreateItem(_item:ItemResource):
 	var _dropItem = dropItem.instantiate()
 	_dropItem.item = _item
-	gridCellDict[Vector2i(1,0)].occupied = true
+	#gridCellDict[Vector2i(1,0)].occupied = true
 	var _occupied:bool = true
 	var _lastGridPos
-	for _gridPos in gridCellDict:
-		if !gridCellDict[_gridPos].occupied:
-			var _exists:bool = true
-			_lastGridPos = _gridPos
-		
-			for _gridPoss in _item.itemDragDropGridSize.x:
-				if _gridPoss != 0: if _gridPoss+_gridPos.x > gridDimensions.x-1: _exists = false
-			for _gridPoss in _item.itemDragDropGridSize.y:
-				if _gridPoss != 0: if _gridPoss+_gridPos.y > gridDimensions.y-1: _exists = false
+	var _cellsToOccupy:Array[Vector2i]
+	for _x in gridDimensions.x:
+		if !_occupied: break
+		for _y in gridDimensions.y:
+			var _gridPos = Vector2i(_x,_y)
+			if !gridCellDict[_gridPos].occupied:
+				var _exists:bool = true
+				_lastGridPos = _gridPos
 				
-			if _exists:
-				_occupied = false
-				for _gridPoss in _item.itemDragDropGridSize.x:
-					if _gridPoss != 0: if gridCellDict[_gridPoss+_gridPos.x].occupied: _occupied = true
-					for _gridPosss in _item.itemDragDropGridSize.y:
-						if _gridPosss != 0: if gridCellDict[Vector2i(_gridPos.x + _gridPoss, _gridPos.y + _gridPosss)].occupied: _occupied = true
-				if !_occupied: break
-				#if _gridPos.x + _gridPoss.x > gridDimensions.x:
-				#	pass
-				#if gridCellDict[_gridPos + _gridPoss].occupied:
-				#	_occupied = true
-		else:
-			_occupied = true
-	print(_occupied)
+				for _itemX in _item.itemDragDropGridSize.y:
+					if _itemX+_gridPos.x > gridDimensions.x-1: _exists = false
+					for _itemY in _item.itemDragDropGridSize.x:
+						if _itemY+_gridPos.y > gridDimensions.y-1: _exists = false
+						
+				if _exists:
+					_occupied = false
+					_cellsToOccupy.clear()
+					for _itemX in _item.itemDragDropGridSize.y:
+						for _itemY in _item.itemDragDropGridSize.x:
+							if gridCellDict[Vector2i( _itemX+_gridPos.x, _itemY+_gridPos.y)].occupied: _occupied = true
+							_cellsToOccupy.append(Vector2i(_itemX+_gridPos.x, _itemY+_gridPos.y))
+					if !_occupied: break
+			else:
+				_occupied = true
+				
 	if !_occupied:
 		_dropItem.setup(gridCellSize)
 		add_sibling(_dropItem)
 		_dropItem.position = gridCellDict[_lastGridPos].tileRef.get_global_rect().position
 		gridCellDict[_lastGridPos].occupied = true
+		print(_cellsToOccupy)
+		for _cell in _cellsToOccupy:
+			gridCellDict[_cell].occupied = true
+			gridCellDict[_cell].tileRef.occupied = true
 	_dropItem = null
 	

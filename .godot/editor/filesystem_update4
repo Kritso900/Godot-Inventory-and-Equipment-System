@@ -1,7 +1,7 @@
-res://Scenes/Drag Drop Inventory/DragDropItem.tscn
-res://GridTile.gd
-res://Scenes/control.tscn
 res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn
+res://GridTile.gd
 res://InventoryGridController.gd
-res://Scenes/Drag Drop Inventory/DragDropItem.gd
-res://DragDropController.gd
+res://Scenes/Drag Drop Inventory/DragDropItem.tscn
+res://Scenes/control.tscn
+res://Resources/Items/Estoc.tres
+res://Resources/Items/Breastplate.tres
