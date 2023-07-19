@@ -6,6 +6,9 @@ var isInitialised:bool
 
 @onready var imageRef:TextureRect = $TextureRect
 
+var locationCell:Vector2i
+var occupiedCells:Array[Vector2i]
+
 
 
 
@@ -15,31 +18,29 @@ func setup(gridCellSize:Vector2):
 		$TextureRect.set_texture(item.itemUiImage)
 		$TextureRect.size = gridCellSize * Vector2(item.itemDragDropGridSize)
 		$TextureRect/ItemPickupButton.tooltip_text = setupTooltip()
+		
 
 
 func _on_item_pickup_button_press():
-	DragDropController.HeldItem = self
-	$TextureRect/ItemPickupButton/ItemContextButton.disabled = true
+	if !DragDropController.HeldItem:
+		DragDropController.HeldItem = self
+		$TextureRect/ItemPickupButton/ItemContextButton.disabled = true
+	else:
+		DragDropController.HeldItem = null
+	$TextureRect/ItemPickupButton/ItemContextButton.disabled = false
 	
 
-
-func _on_item_pickup_button_release():
-	DragDropController.HeldItem = null
-	$TextureRect/ItemPickupButton/ItemContextButton.disabled = false
 
 
 
 
 
 func _on_item_context_button_press():
+	
 	print("Right click")
 	pass # Replace with function body.
 
 
-func _on_item_pickup_button_mouse_entered():
-	print("hover start")
-	$Position.global_position
-	pass # Replace with function body.
 
 func setupTooltip():
 	var _tooltipText:String = item.itemName

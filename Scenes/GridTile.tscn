@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbbcx5od128lp"]
+
+[ext_resource type="Texture2D" uid="uid://xm74yaytlqj2" path="res://InventoryGridBackground.png" id="1_vr4v6"]
+[ext_resource type="Script" path="res://GridTile.gd" id="2_0ntkt"]
+
+[node name="TextureRect" type="TextureRect"]
+texture = ExtResource("1_vr4v6")
+script = ExtResource("2_0ntkt")
+
+[node name="LabelPos" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LabelOcc" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 39.111
+offset_right = 41.0
+offset_bottom = 62.111
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

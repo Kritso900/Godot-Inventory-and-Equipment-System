@@ -5,3 +5,6 @@ res://Scenes/Drag Drop Inventory/DragDropItem.tscn
 res://Scenes/control.tscn
 res://Resources/Items/Estoc.tres
 res://Resources/Items/Breastplate.tres
+res://Scenes/Drag Drop Inventory/DragDropItem.gd
+res://DragDropController.gd
+res://Scenes/GridTile.tscn

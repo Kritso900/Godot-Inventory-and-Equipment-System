@@ -67,17 +67,42 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("ui_right"):
 		CreateItem(preload("res://Resources/Items/Estoc.tres"))
-	if Input.is_action_just_pressed("ui_down"):
+	
+	if DragDropController.HeldItem:
+		$"Hover Panel Seperator/Hover Panel".show()
+		$"Hover Panel Seperator/Hover Panel".size = Vector2(DragDropController.HeldItem.item.itemDragDropGridSize)*gridCellSize
 		
-		print(gridCellDict[Vector2i(0,0)].occupied, gridCellDict[Vector2i(0,1)].occupied,gridCellDict[Vector2i(0,2)].occupied,gridCellDict[Vector2i(0,3)].occupied,gridCellDict[Vector2i(0,4)].occupied,gridCellDict[Vector2i(0,5)].occupied)
-		print(gridCellDict[Vector2i(1,0)].occupied, gridCellDict[Vector2i(1,1)].occupied,gridCellDict[Vector2i(1,2)].occupied,gridCellDict[Vector2i(1,3)].occupied,gridCellDict[Vector2i(1,4)].occupied,gridCellDict[Vector2i(1,5)].occupied)
+		
+		
+		var _gridPos = DragDropController.hoveredTilePos
+		var _occupied:bool = true
+		var _exists:bool = true
+		
+		for _itemX in DragDropController.HeldItem.item.itemDragDropGridSize.y:
+			if _itemX+_gridPos.x > gridDimensions.x-1: _exists = false
+			for _itemY in DragDropController.HeldItem.item.itemDragDropGridSize.x:
+				if _itemY+_gridPos.y > gridDimensions.y-1: _exists = false
 
+		if _exists:
+			_occupied = false
+			for _itemX in DragDropController.HeldItem.item.itemDragDropGridSize.y:
+				for _itemY in DragDropController.HeldItem.item.itemDragDropGridSize.x:
+					if gridCellDict[Vector2i( _itemX+_gridPos.x, _itemY+_gridPos.y)].occupied: _occupied = true
+			
+		if _exists:
+			$"Hover Panel Seperator/Hover Panel".position = DragDropController.hoveredTile.get_global_rect().position
+		
+	else:
+		$"Hover Panel Seperator/Hover Panel".hide()
+	
 var grabbed = Callable(self, "Grab")
 var released = Callable(self, "Release")
 
 func PickUp(item:Node):
-	### Called when an item is picked up from this inventory
-	pass
+	gridCellDict[item.locationCell].occupied = false
+	for _cell in item.occupiedCells:
+		
+		gridCellDict[_cell].occupied = false
 
 func Place(item:Node, _gridTile:Vector2i):
 	
@@ -94,6 +119,8 @@ func GetMouseLocationOnGrid():
 
 func _on_mouse_entered_inventory_grid():
 	mouseInGrid = true
+	DragDropController.gridSizeOffset = gridCellOffset
+	DragDropController.currentGrid = self
 
 
 func _on_mouse_exited_inventory_grid():
@@ -139,5 +166,7 @@ func CreateItem(_item:ItemResource):
 		for _cell in _cellsToOccupy:
 			gridCellDict[_cell].occupied = true
 			gridCellDict[_cell].tileRef.occupied = true
+		_dropItem.occupiedCells = _cellsToOccupy
+		_dropItem.locationCell = _lastGridPos
 	_dropItem = null
 	
