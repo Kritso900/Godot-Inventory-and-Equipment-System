@@ -18,12 +18,8 @@ var gridAStar:AStar2D = AStar2D.new()
 
 var dropItem = preload("res://Scenes/Drag Drop Inventory/DragDropItem.tscn")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalBus.inventoryItemPickup.connect(grabbed)
-	SignalBus.inventoryItemPlace.connect(released)
 	gridDimensions = Vector2i(GridRef.columns, GridRef.get_children(false).size()/GridRef.columns)
-	#if GridRef.get_children(false).size()%GridRef.columns: push_error("Grid is not a rectangle, please fix this")
 	gridCellSize = $GridContainer/TextureRect.size
 	gridCellOffset = gridCellSize/2
 	for _tile in GridRef.get_children(false):
@@ -34,31 +30,7 @@ func _ready():
 		gridCellDict[_gridPos] = {tileRef = _tile, occupied = false}
 		_tile.position = _gridPos
 		
-	
-#	for _tile in GridRef.get_children(false):
-#		var tile:TextureRect = _tile
-#		if ignoredGridSquares.find(_tile) == -1:
-#			var _id = GridRef.get_children(false).find(_tile)
-#
-#			var _x = GridRef.get_children(false).find(_tile)/GridRef.columns
-#			var _y = GridRef.get_children(false).find(_tile) - _x*GridRef.columns
-#			var _gridPos = Vector2i(_x, _y)
-#			gridAStar.add_point(_id, (Vector2(_gridPos)*gridCellSize)+gridCellSize+GridRef.global_position)
-#
-#			var _dropItem = dropItem.instantiate()
-#			add_sibling(_dropItem)
-#			pass
-#
-#		pass
-	
-	for _x in gridDimensions.x:
-		for _y in gridDimensions.y:
-			pass
-	
-	
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Sprite2D.position = get_viewport().get_mouse_position()
 	if Input.is_action_just_pressed("ui_left"):
@@ -105,19 +77,6 @@ func _process(delta):
 		$"Hover Panel Seperator/Bad Hover Panel".hide()
 	if $MarginContainer.get_global_rect().has_point(get_viewport().get_mouse_position()): _on_mouse_entered_inventory_grid()
 	else: _on_mouse_exited_inventory_grid()
-	
-var grabbed = Callable(self, "Grab")
-var released = Callable(self, "Release")
-
-
-	
-	
-	
-	
-	
-func GetMouseLocationOnGrid():
-	return Vector2i.ZERO # Put code here
-
 
 
 
@@ -133,7 +92,6 @@ func _on_mouse_exited_inventory_grid():
 func CreateItem(_item:ItemResource):
 	var _dropItem = dropItem.instantiate()
 	_dropItem.item = _item
-	#gridCellDict[Vector2i(1,0)].occupied = true
 	var _occupied:bool = true
 	var _lastGridPos
 	var _cellsToOccupy:Array[Vector2i]

@@ -1,39 +1,21 @@
 extends Control
 
 var isInitialised:bool
-
 @export var item:ItemResource
-
 @onready var imageRef:TextureRect = $TextureRect
-
 var locationCell:Vector2i
 var occupiedCells:Array[Vector2i]
-
-
-
-
 
 func setup(gridCellSize:Vector2):
 	if(item):
 		$TextureRect.set_texture(item.itemUiImage)
 		$TextureRect.size = gridCellSize * Vector2(item.itemDragDropGridSize)
 		$TextureRect/ItemPickupButton.tooltip_text = setupTooltip()
-		
-
-
-
-
-
-
-
-
 
 func _on_item_context_button_press():
 	
 	print("Right click")
 	pass # Replace with function body.
-
-
 
 func setupTooltip():
 	var _tooltipText:String = item.itemName
@@ -47,8 +29,6 @@ func setupTooltip():
 			pass
 	_tooltipText += "\n" + item.itemTooltip
 	return _tooltipText
-
-
 
 func _on_item_pickup_button_pressed():
 	if !DragDropController.heldItem:

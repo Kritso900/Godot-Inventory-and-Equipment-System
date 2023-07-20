@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://Scripts/Globals.gd"
-SignalBus="*res://Scripts/SignalBus.gd"
 DragDropController="*res://DragDropController.gd"
 
 [display]
