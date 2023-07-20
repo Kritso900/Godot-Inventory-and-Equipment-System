@@ -58,7 +58,6 @@ func _ready():
 	
 	pass # Replace with function body.
 
-var dropItemType = preload("res://Resources/Items/Breastplate.tres")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Sprite2D.position = get_viewport().get_mouse_position()
@@ -68,45 +67,50 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_right"):
 		CreateItem(preload("res://Resources/Items/Estoc.tres"))
 	
-	if DragDropController.HeldItem:
-		$"Hover Panel Seperator/Hover Panel".show()
-		$"Hover Panel Seperator/Hover Panel".size = Vector2(DragDropController.HeldItem.item.itemDragDropGridSize)*gridCellSize
-		
+	if DragDropController.heldItem:
+		$"Hover Panel Seperator/Hover Panel".size = Vector2(DragDropController.heldItem.item.itemDragDropGridSize)*gridCellSize
+		$"Hover Panel Seperator/Bad Hover Panel".size = Vector2(DragDropController.heldItem.item.itemDragDropGridSize)*gridCellSize
 		
 		
 		var _gridPos = DragDropController.hoveredTilePos
 		var _occupied:bool = true
 		var _exists:bool = true
-		
-		for _itemX in DragDropController.HeldItem.item.itemDragDropGridSize.y:
+		DragDropController.validDropPos = false
+		$"Hover Panel Seperator/Hover Panel".hide()
+		$"Hover Panel Seperator/Bad Hover Panel".show()
+		for _itemX in DragDropController.heldItem.item.itemDragDropGridSize.y:
 			if _itemX+_gridPos.x > gridDimensions.x-1: _exists = false
-			for _itemY in DragDropController.HeldItem.item.itemDragDropGridSize.x:
+			for _itemY in DragDropController.heldItem.item.itemDragDropGridSize.x:
 				if _itemY+_gridPos.y > gridDimensions.y-1: _exists = false
 
 		if _exists:
 			_occupied = false
-			for _itemX in DragDropController.HeldItem.item.itemDragDropGridSize.y:
-				for _itemY in DragDropController.HeldItem.item.itemDragDropGridSize.x:
+			for _itemX in DragDropController.heldItem.item.itemDragDropGridSize.y:
+				for _itemY in DragDropController.heldItem.item.itemDragDropGridSize.x:
 					if gridCellDict[Vector2i( _itemX+_gridPos.x, _itemY+_gridPos.y)].occupied: _occupied = true
+			if !_occupied: 
+				DragDropController.validDropPos = true
+				$"Hover Panel Seperator/Hover Panel".show()
+				$"Hover Panel Seperator/Bad Hover Panel".hide()
 			
 		if _exists:
 			$"Hover Panel Seperator/Hover Panel".position = DragDropController.hoveredTile.get_global_rect().position
-		
+			$"Hover Panel Seperator/Bad Hover Panel".position = DragDropController.hoveredTile.get_global_rect().position
+			
+		if (!mouseInGrid):
+			$"Hover Panel Seperator/Hover Panel".hide()
+			$"Hover Panel Seperator/Bad Hover Panel".hide()
 	else:
 		$"Hover Panel Seperator/Hover Panel".hide()
+		$"Hover Panel Seperator/Bad Hover Panel".hide()
+	if $MarginContainer.get_global_rect().has_point(get_viewport().get_mouse_position()): _on_mouse_entered_inventory_grid()
+	else: _on_mouse_exited_inventory_grid()
 	
 var grabbed = Callable(self, "Grab")
 var released = Callable(self, "Release")
 
-func PickUp(item:Node):
-	gridCellDict[item.locationCell].occupied = false
-	for _cell in item.occupiedCells:
-		
-		gridCellDict[_cell].occupied = false
 
-func Place(item:Node, _gridTile:Vector2i):
 	
-	pass
 	
 	
 	
@@ -170,3 +174,22 @@ func CreateItem(_item:ItemResource):
 		_dropItem.locationCell = _lastGridPos
 	_dropItem = null
 	
+	
+	
+func IsItemGridPosValid(_item:Node, _pos:Vector2i):
+	var _exists = true
+	var _occupied
+	
+	for _itemX in _item.item.itemDragDropGridSize.y:
+		if _itemX+_pos.x > gridDimensions.x-1: _exists = false
+		for _itemY in _item.item.itemDragDropGridSize.x:
+			if _itemY+_pos.y > gridDimensions.y-1: _exists = false
+
+	if _exists:
+		_occupied = false
+		for _itemX in _item.item.itemDragDropGridSize.y:
+			for _itemY in _item.item.itemDragDropGridSize.x:
+				if gridCellDict[Vector2i( _itemX+_pos.x, _itemY+_pos.y)].occupied: _occupied = true
+		if !_occupied: 
+			DragDropController.validDropPos = true
+	return true if _exists and !_occupied else false

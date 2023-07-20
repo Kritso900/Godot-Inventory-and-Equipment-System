@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d303vkpxby4mv"]
+[gd_scene load_steps=7 format=3 uid="uid://d303vkpxby4mv"]
 
 [ext_resource type="Script" path="res://InventoryGridController.gd" id="1_46ebp"]
 [ext_resource type="Texture2D" uid="uid://d075jsnfwo34e" path="res://nS_MenuBack.png" id="2_hejlp"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dihc4ted4eodb" path="res://icon.svg" id="4_qa63i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84uk0"]
-bg_color = Color(0.682353, 0.603922, 0, 0.196078)
+bg_color = Color(0.682353, 0.521569, 0, 0.196078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyhym"]
+bg_color = Color(1, 0.341176, 0.305882, 0.196078)
 
 [node name="PanelContainer" type="PanelContainer"]
 texture_filter = 1
@@ -158,6 +161,12 @@ offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84uk0")
+
+[node name="Bad Hover Panel" type="Panel" parent="Hover Panel Seperator"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xyhym")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered_inventory_grid"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited_inventory_grid"]

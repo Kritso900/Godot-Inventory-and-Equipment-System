@@ -21,14 +21,7 @@ func setup(gridCellSize:Vector2):
 		
 
 
-func _on_item_pickup_button_press():
-	if !DragDropController.HeldItem:
-		DragDropController.HeldItem = self
-		$TextureRect/ItemPickupButton/ItemContextButton.disabled = true
-	else:
-		DragDropController.HeldItem = null
-	$TextureRect/ItemPickupButton/ItemContextButton.disabled = false
-	
+
 
 
 
@@ -55,3 +48,12 @@ func setupTooltip():
 	_tooltipText += "\n" + item.itemTooltip
 	return _tooltipText
 
+
+
+func _on_item_pickup_button_pressed():
+	if !DragDropController.heldItem:
+		DragDropController.PickUp(self)
+		$TextureRect/ItemPickupButton/ItemContextButton.disabled = true
+	else:
+		DragDropController.Place(self)
+	$TextureRect/ItemPickupButton/ItemContextButton.disabled = false
