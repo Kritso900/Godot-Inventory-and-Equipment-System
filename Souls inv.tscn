@@ -1,0 +1,766 @@
+[gd_scene load_steps=13 format=3 uid="uid://pb54f7mg3k08"]
+
+[ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://1x1 Misc Item Error.png" id="1_01fll"]
+[ext_resource type="Texture2D" uid="uid://d075jsnfwo34e" path="res://nS_MenuBack.png" id="1_gy82t"]
+[ext_resource type="Texture2D" uid="uid://d3ha2b20dtuvt" path="res://Mini Error.png" id="3_ss0cq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ff2k"]
+bg_color = Color(0, 0, 0, 0.392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.298039, 0.298039, 0.298039, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1285m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4nsj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2apnw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b5vdo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gvqp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k8a1q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce34i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8kt4"]
+
+[node name="Control" type="Node"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -12
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = -12
+theme_override_constants/margin_bottom = -12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_gy82t")
+region_rect = Rect2(0, 0, 25, 25)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Tab List Menu tab" type="PanelContainer" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_top = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.15
+grow_horizontal = 0
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Tab List Menu tab"]
+layout_mode = 2
+theme_override_constants/margin_left = -12
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = -12
+theme_override_constants/margin_bottom = -12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Tab List Menu tab/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_gy82t")
+region_rect = Rect2(0, 0, 25, 25)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="TabBar" type="TabBar" parent="Tab List Menu tab"]
+layout_mode = 2
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_7ff2k")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_1285m")
+theme_override_styles/button_pressed = SubResource("StyleBoxEmpty_w4nsj")
+theme_override_styles/button_highlight = SubResource("StyleBoxEmpty_2apnw")
+tab_alignment = 1
+clip_tabs = false
+tab_count = 2
+tab_0/title = ""
+tab_0/icon = ExtResource("1_01fll")
+tab_1/title = ""
+tab_1/icon = ExtResource("1_01fll")
+
+[node name="Panel" type="PanelContainer" parent="."]
+offset_left = 291.0
+offset_top = 271.0
+offset_right = 674.0
+offset_bottom = 769.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_gy82t")
+patch_margin_left = 12
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Item List" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Margin Container" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container2" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container2"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container2/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container2"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container3" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container3"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container3/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container3"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container4" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container4"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container4/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container4"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container5" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container5"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container5/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container5"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container6" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container6"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container6/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container6"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container7" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container7"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container7/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container7"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container8" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container8"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container8/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container8"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container9" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container9"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container9/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container9"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container10" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container10"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container10/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container10"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="Margin Container11" type="PanelContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b5vdo")
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container11"]
+layout_mode = 2
+
+[node name="Item Icon" type="TextureRect" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="Icon Separator" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox"]
+layout_mode = 2
+
+[node name="Item Context Box - Text" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox/Item Context Box - Text"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Item Name" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox/Item Context Box - Text"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="Context spacer" type="HSeparator" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="Panel/ScrollContainer/Item List/Margin Container11/HBox/Item Context Box - Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Item Description Item Description Item Description "
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="Item Button" type="Button" parent="Panel/ScrollContainer/Item List/Margin Container11"]
+layout_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7gvqp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k8a1q")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/ScrollContainer/Item List"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBox" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox"]
+layout_mode = 2
+texture = ExtResource("1_01fll")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox"]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer"]
+layout_mode = 2
+text = "Name of item"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ss0cq")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "404"
+
+[node name="VSeparator2" type="VSeparator" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_ss0cq")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "404"
+
+[node name="VSeparator3" type="VSeparator" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("3_ss0cq")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "404"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("3_ss0cq")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "404"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("3_ss0cq")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/Item List/MarginContainer2/HBox/VSplitContainer/HBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "404"
+
+[node name="Button" type="Button" parent="Panel/ScrollContainer/Item List/MarginContainer2"]
+layout_mode = 2
+mouse_default_cursor_shape = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ce34i")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q8kt4")
