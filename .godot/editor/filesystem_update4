@@ -4,3 +4,9 @@ res://Scenes/control.tscn
 res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn
 res://Scenes/GridTile.tscn
 res://Souls inv.tscn
+res://TabListItem-Stats.tscn
+res://Scripts/ItemResource.gd
+res://TabListItem.gd
+res://TabListItem-Text.gd
+res://TabListItem-Stats.gd
+res://TabListItem-Text.tscn

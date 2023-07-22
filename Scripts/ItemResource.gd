@@ -28,6 +28,12 @@ const  ITEM:GDScript = preload("res://Scripts/ItemResource.gd")
 # An example boolean to make future implementation easier, could be used for item unlocked state, if it's a key item, etc
 @export var exampleBool:bool
 
+# If true the item can be used as a consumable
+@export var isItemUsable:bool
+
+# If true then all drop/leave/destroy commands will be ignored by the item, ensuring it stays in the player's inventory
+@export var isKeyItem:bool
+
 
 # All variables in the resource must have a default value or they will create problems
 func _init():

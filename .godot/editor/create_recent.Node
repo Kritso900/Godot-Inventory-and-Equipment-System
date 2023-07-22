@@ -1,9 +1,9 @@
 PanelContainer
+MenuButton
 NinePatchRect
 MarginContainer
 Panel
 Container
-MenuButton
 PopupMenu
 OptionButton
 HSeparator
