@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqrvk7s2xpii8"]
+[gd_scene load_steps=12 format=3 uid="uid://dqrvk7s2xpii8"]
 
 [ext_resource type="Script" path="res://TabListItem-Stats.gd" id="1_6g6xv"]
 [ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://1x1 Misc Item Error.png" id="1_sb0b0"]
-[ext_resource type="Texture2D" uid="uid://d3ha2b20dtuvt" path="res://Mini Error.png" id="2_4qf6l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qytwl"]
 
@@ -23,6 +22,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8kt4"]
 
 [node name="Item Container - Stats" type="PanelContainer" node_paths=PackedStringArray("stat1Ref", "stat2Ref", "imageRef", "nameRef", "selectButtonRef", "contextButtonRef")]
+offset_right = 976.0
+offset_bottom = 128.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qytwl")
 script = ExtResource("1_6g6xv")
 stat1Ref = NodePath("HBox/VSplitContainer/HBoxContainer/Stat Container 1")
@@ -42,6 +43,7 @@ stretch_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="HBox"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="VSplitContainer" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
@@ -51,14 +53,17 @@ theme_override_constants/separation = -4
 editor_description = "Theme Overrides > Constants > Seperation
 Sets how long the item's box is, allowing the content to fill the space created."
 layout_mode = 2
-theme_override_constants/separation = 300
+mouse_filter = 2
+theme_override_constants/separation = 850
 
 [node name="Label" type="Label" parent="HBox/VSplitContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Name of item"
 
 [node name="HSeparator" type="HSeparator" parent="HBox/VSplitContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBox/VSplitContainer"]
@@ -66,32 +71,38 @@ layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="HBox/VSplitContainer/HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 48
 
 [node name="Stat Container 1" type="HBoxContainer" parent="HBox/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="Stat Icon" type="TextureRect" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 1"]
 layout_mode = 2
-texture = ExtResource("2_4qf6l")
+texture = ExtResource("1_sb0b0")
 stretch_mode = 2
 
 [node name="Stat Value" type="Label" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 1"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "404"
 
 [node name="VSeparator2" type="VSeparator" parent="HBox/VSplitContainer/HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
 
 [node name="Stat Container 2" type="HBoxContainer" parent="HBox/VSplitContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="Stat Icon" type="TextureRect" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 2"]
 layout_mode = 2
-texture = ExtResource("2_4qf6l")
+texture = ExtResource("1_sb0b0")
 stretch_mode = 2
 
 [node name="Stat Value" type="Label" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "404"
 
 [node name="Context Button" type="MenuButton" parent="."]
@@ -112,10 +123,18 @@ popup/item_2/text = "Destroy"
 popup/item_2/id = 2
 
 [node name="Select Button" type="Button" parent="Context Button"]
-layout_mode = 2
-offset_right = 376.0
-offset_bottom = 64.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ce34i")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_f1or7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q8kt4")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 128

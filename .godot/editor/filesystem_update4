@@ -5,8 +5,13 @@ res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn
 res://Scenes/GridTile.tscn
 res://Souls inv.tscn
 res://TabListItem-Stats.tscn
-res://Scripts/ItemResource.gd
-res://TabListItem.gd
-res://TabListItem-Text.gd
-res://TabListItem-Stats.gd
 res://TabListItem-Text.tscn
+res://Tab List Inventory Controller.gd
+res://TabListItemList.gd
+res://TabListItem-Stats.gd
+res://TabList_ItemListContainer.gd
+res://TabListItem.gd
+res://Resources/Items/Breastplate.tres
+res://Scripts/Globals.gd
+res://Resources/Items/Potion.tres
+res://Scripts/ItemResource.gd

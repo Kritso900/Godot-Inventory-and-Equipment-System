@@ -6,8 +6,6 @@ var item:ItemResource
 @export var selectButtonRef:Button
 @export var contextButtonRef:MenuButton
 
-func _ready():
-	Setup(preload("res://Resources/Items/Estoc.tres"))
 
 func Setup(_item):
 	item = _item

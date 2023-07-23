@@ -16,8 +16,13 @@ const  ITEM:GDScript = preload("res://Scripts/ItemResource.gd")
 # The item type of the item, can be used for requirments such as if armor is a helmet or glove
 @export var itemType:Globals.ItemTypes
 
-# Size of the item in the drag drop grid, will be ignored if not using the drag drop inventory
+# Size of the item in the drag drop grid
+# Will be ignored if not using the drag drop inventory
 @export var itemDragDropGridSize:Vector2i
+
+# If false item will show it's tooltip as a description, if true then the item's variables as setup in TabListItem-Stats will be shown
+# Will be ignored if not using tab list inventory
+@export var tabListShowStats:bool
 
 # An example int to make future implementation easier, could be used for value, item rarity, etc
 @export var exampleInt:int
@@ -40,7 +45,7 @@ func _init():
 	itemUiImage = preload("res://1x1 Misc Item Error.png")
 	itemName = ""
 	itemTooltip = ""
-	itemType = Globals.ItemTypes.TYPE3
+	itemType = Globals.ItemTypes.CONSUMABLE
 	itemDragDropGridSize = Vector2i(1,1)
 	exampleInt = 0
 	exampleFloat = 0
