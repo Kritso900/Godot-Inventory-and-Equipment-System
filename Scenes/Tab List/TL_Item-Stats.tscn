@@ -1,0 +1,135 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqrvk7s2xpii8"]
+
+[ext_resource type="Script" path="res://Scripts/Tab List/TL_Item-Stats.gd" id="1_yemjc"]
+[ext_resource type="Texture2D" uid="uid://dud6iteoibfab" path="res://Assets/Sprites/Square - Item Error.png" id="2_hx7tt"]
+[ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://Assets/Sprites/DD_1x1 Misc Item Error.png" id="3_3mb7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qytwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b4fsi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8lbc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_su5re"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwmjm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bs6s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce34i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1or7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8kt4"]
+
+[node name="Item Container - Stats" type="PanelContainer"]
+offset_right = 976.0
+offset_bottom = 128.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qytwl")
+script = ExtResource("1_yemjc")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBox"]
+layout_mode = 2
+texture = ExtResource("2_hx7tt")
+stretch_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBox"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VSplitContainer" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Box length filler" type="VSeparator" parent="HBox/VSplitContainer"]
+editor_description = "Theme Overrides > Constants > Seperation
+Sets how long the item's box is, allowing the content to fill the space created."
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 850
+
+[node name="Label" type="Label" parent="HBox/VSplitContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Name of item"
+
+[node name="HSeparator" type="HSeparator" parent="HBox/VSplitContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/VSplitContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 48
+
+[node name="Stat Container 1" type="HBoxContainer" parent="HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Stat Icon" type="TextureRect" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 1"]
+layout_mode = 2
+texture = ExtResource("3_3mb7k")
+stretch_mode = 2
+
+[node name="Stat Value" type="Label" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "404"
+
+[node name="VSeparator2" type="VSeparator" parent="HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Stat Container 2" type="HBoxContainer" parent="HBox/VSplitContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Stat Icon" type="TextureRect" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 2"]
+layout_mode = 2
+texture = ExtResource("3_3mb7k")
+stretch_mode = 2
+
+[node name="Stat Value" type="Label" parent="HBox/VSplitContainer/HBoxContainer/Stat Container 2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "404"
+
+[node name="Context Button" type="MenuButton" parent="."]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b4fsi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p8lbc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_su5re")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uwmjm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5bs6s")
+button_mask = 2
+item_count = 3
+popup/item_0/text = "Use"
+popup/item_0/id = 0
+popup/item_1/text = "Drop"
+popup/item_1/id = 1
+popup/item_2/text = "Destroy"
+popup/item_2/id = 2
+
+[node name="Select Button" type="Button" parent="Context Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ce34i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f1or7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q8kt4")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 128

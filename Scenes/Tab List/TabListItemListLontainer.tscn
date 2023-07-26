@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0uxrjl3y4kh"]
+
+[ext_resource type="Script" path="res://Scripts/Tab List/TL_ItemListContainer.gd" id="1_xpxgq"]
+[ext_resource type="PackedScene" uid="uid://dqrvk7s2xpii8" path="res://Scenes/Tab List/TL_Item-Stats.tscn" id="2_0asxo"]
+[ext_resource type="PackedScene" uid="uid://bmgfqhko45xmn" path="res://Scenes/Tab List/TL_Item-Text.tscn" id="3_pmjh5"]
+[ext_resource type="Texture2D" uid="uid://d075jsnfwo34e" path="res://Assets/Sprites/nS_MenuBack.png" id="4_0tucf"]
+
+[node name="Item List Container" type="PanelContainer" node_paths=PackedStringArray("itemListRef")]
+script = ExtResource("1_xpxgq")
+itemListRef = NodePath("ScrollContainer/Item List")
+itemStatsSceneRef = ExtResource("2_0asxo")
+itemTextSceneRef = ExtResource("3_pmjh5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_0tucf")
+patch_margin_left = 12
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Item List" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 650

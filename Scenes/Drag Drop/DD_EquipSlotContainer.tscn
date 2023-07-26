@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm3tlbbr85qvw"]
+
+[ext_resource type="Script" path="res://Scripts/Drag Drop/DD_EquipSlot.gd" id="1_ryb36"]
+[ext_resource type="Texture2D" uid="uid://1xh326wk3yec" path="res://Assets/Sprites/nS_Button.png" id="2_1ms6i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bhen"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2horc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdb2h"]
+
+[node name="Drag Drop Equip Slot" type="VBoxContainer"]
+script = ExtResource("1_ryb36")
+
+[node name="Slot Name" type="Label" parent="."]
+layout_mode = 2
+text = "NaN"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Slot Background Container" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Slot Background Container"]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="Slot Background" type="NinePatchRect" parent="Slot Background Container/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_1ms6i")
+patch_margin_left = 31
+patch_margin_top = 31
+patch_margin_right = 31
+patch_margin_bottom = 31
+
+[node name="Equiped Item Icon" type="TextureRect" parent="Slot Background Container"]
+layout_mode = 2
+
+[node name="Equip Button" type="Button" parent="Slot Background Container"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7bhen")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2horc")
+
+[node name="VSeparator" type="VSeparator" parent="Slot Background Container"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 128
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bdb2h")
+
+[node name="HSeparator" type="HSeparator" parent="Slot Background Container"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 128
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bdb2h")
+
+[connection signal="pressed" from="Slot Background Container/Equip Button" to="." method="_on_equip_button_pressed"]

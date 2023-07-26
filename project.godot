@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="DES311"
-run/main_scene="res://Scenes/control.tscn"
+run/main_scene="res://Scenes/Drag Drop/DD_ExampleScene.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Sprites/icon.svg"
 
 [autoload]
 
 Globals="*res://Scripts/Globals.gd"
-DragDropController="*res://DragDropController.gd"
+DD_InventoryController="*res://Scripts/Drag Drop/DD_InventoryController.gd"
 
 [display]
 

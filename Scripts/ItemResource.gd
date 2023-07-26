@@ -42,16 +42,3 @@ const  ITEM:GDScript = preload("res://Scripts/ItemResource.gd")
 
 # If true then all drop/leave/destroy commands will be ignored by the item, ensuring it stays in the player's inventory
 @export var isKeyItem:bool
-
-
-# All variables in the resource must have a default value or they will create problems
-func _init():
-	itemUiImage = preload("res://Square - Item Error.png")
-	itemUiImageGrid = preload("res://1x1 Misc Item Error.png")
-	itemName = ""
-	itemTooltip = ""
-	itemType = Globals.ItemTypes.CONSUMABLE
-	itemDragDropGridSize = Vector2i(1,1)
-	exampleInt = 0
-	exampleFloat = 0
-	exampleBool = false

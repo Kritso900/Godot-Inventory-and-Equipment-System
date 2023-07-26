@@ -1,20 +1,14 @@
-res://Scenes/Drag Drop Inventory/DragDropItem.tscn
-res://GridTile.gd
-res://Scenes/control.tscn
-res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn
-res://Scenes/GridTile.tscn
-res://Souls inv.tscn
-res://TabListItem-Stats.tscn
-res://TabListItem-Text.tscn
-res://TabListEquipSlotContainer.tscn
-res://TabList_ItemListContainer.gd
-res://Scenes/Tab List Inventory/TabListItemListLontainer.tscn
-res://TabListEquipItemSlot.gd
-res://Tab List Inventory Controller.gd
-res://Resources/Items/Potion.tres
-res://DragDropEquipSlotContainer.tscn
-res://DragDropController.gd
-res://DD_EquipSlotContainer.gd
-res://Scenes/Drag Drop Inventory/DragDropItem.gd
-res://InventoryGridController.gd
-res://DD_PlayerStats.gd
+res://Scenes/Drag Drop/DD_GridContainer.tscn
+res://Scripts/Drag Drop/DD_GridController.gd
+res://Scenes/Drag Drop/DD_GridItem.tscn
+res://Scenes/Tab List/TL_ExampleScene.tscn
+res://Scenes/Tab List/TL_Item-Stats.tscn
+res://Scenes/Tab List/TL_Item-Text.tscn
+res://Scenes/Tab List/TL_EquipSlotContainer.tscn
+res://Scenes/Tab List/TabListItemListLontainer.tscn
+res://Scenes/Drag Drop/DD_EquipSlotContainer.tscn
+res://Scripts/Drag Drop/DD_GridTile.gd
+res://Scripts/Drag Drop/DD_PlayerStats.gd
+res://Scenes/Drag Drop/DD_ExampleScene.tscn
+res://Scripts/Drag Drop/DD_GridItem.gd
+res://Scripts/Drag Drop/DD_EquipSlot.gd

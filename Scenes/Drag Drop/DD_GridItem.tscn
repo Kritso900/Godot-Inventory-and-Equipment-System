@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://byd5tc5euvhts"]
+
+[ext_resource type="Script" path="res://Scripts/Drag Drop/DD_GridItem.gd" id="1_hvnxr"]
+[ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://Assets/Sprites/DD_1x1 Misc Item Error.png" id="2_6sy3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu758"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6b08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wl1vt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jnndt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ldsil"]
+
+[node name="DragDropItem" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
+mouse_filter = 2
+script = ExtResource("1_hvnxr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+mouse_filter = 2
+texture = ExtResource("2_6sy3t")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="ItemPickupButton" type="Button" parent="TextureRect"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "hello"
+mouse_filter = 1
+mouse_default_cursor_shape = 13
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gu758")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t6b08")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wl1vt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jnndt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ldsil")
+
+[node name="ItemContextButton" type="MenuButton" parent="TextureRect/ItemPickupButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+action_mode = 1
+button_mask = 2
+
+[connection signal="pressed" from="TextureRect/ItemPickupButton" to="." method="_on_item_pickup_button_pressed"]
+[connection signal="button_down" from="TextureRect/ItemPickupButton/ItemContextButton" to="." method="_on_item_context_button_press"]

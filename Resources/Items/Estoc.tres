@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://r4c686v5x0yv"]
 
-[ext_resource type="Texture2D" uid="uid://b74uiltw1ok4s" path="res://Square - Weapon Estoc.png" id="1_d8f4u"]
-[ext_resource type="Texture2D" uid="uid://bxfv1ngqptb50" path="res://1x2 Weapon Estoc.png" id="1_g7yse"]
+[ext_resource type="Texture2D" uid="uid://b74uiltw1ok4s" path="res://Assets/Sprites/Square - Weapon Estoc.png" id="1_d8f4u"]
+[ext_resource type="Texture2D" uid="uid://bxfv1ngqptb50" path="res://Assets/Sprites/DD_1x2 Weapon Estoc.png" id="1_g7yse"]
 [ext_resource type="Script" path="res://Scripts/ItemResource.gd" id="1_jf2ya"]
 
 [resource]
