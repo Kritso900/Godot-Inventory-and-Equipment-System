@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c28f4e87mbg5a"]
+[gd_scene load_steps=11 format=3 uid="uid://c28f4e87mbg5a"]
 
 [ext_resource type="Script" path="res://Scripts/Tab List/TL_InventoryController.gd" id="1_nppq2"]
 [ext_resource type="Texture2D" uid="uid://d075jsnfwo34e" path="res://Assets/Sprites/nS_MenuBack.png" id="2_xfhw0"]
 [ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://Assets/Sprites/DD_1x1 Misc Item Error.png" id="3_uiin6"]
 [ext_resource type="PackedScene" uid="uid://c0uxrjl3y4kh" path="res://Scenes/Tab List/TabListItemListLontainer.tscn" id="4_klaah"]
+[ext_resource type="PackedScene" uid="uid://deajpwo0gxsgt" path="res://Scenes/Tab List/TL_EquipSlotContainer.tscn" id="5_pip8b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ff2k"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -28,6 +29,8 @@ anti_aliasing = false
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4nsj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2apnw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbrf4"]
 
 [node name="Tab List Inventory Controller" type="Node" node_paths=PackedStringArray("itemListContainerRef", "itemListEquipRef", "itemTypeTab")]
 script = ExtResource("1_nppq2")
@@ -119,6 +122,7 @@ layout_mode = 2
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 91
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jbrf4")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -143,15 +147,16 @@ tab_alignment = 1
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 29
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jbrf4")
 
 [node name="Item List Container" parent="VBoxContainer" node_paths=PackedStringArray("controllerRef") instance=ExtResource("4_klaah")]
 layout_mode = 2
 controllerRef = NodePath("../..")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 1247.0
+offset_left = 1272.0
 offset_top = 269.0
-offset_right = 1677.0
+offset_right = 1702.0
 offset_bottom = 935.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -174,6 +179,7 @@ layout_mode = 2
 
 [node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jbrf4")
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -183,6 +189,7 @@ horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jbrf4")
 
 [node name="Int Stat Box" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -200,6 +207,7 @@ text = "404"
 
 [node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jbrf4")
 
 [node name="Float Stat Box" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -217,8 +225,10 @@ text = "404"
 
 [node name="HSeparator4" type="HSeparator" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jbrf4")
 
 [node name="Equipment Controller" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 
@@ -247,10 +257,7 @@ patch_margin_bottom = 13
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Equipment Controller/PanelContainer"]
 layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Equipment Controller/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 64
 alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Equipment Controller/PanelContainer/VBoxContainer"]
@@ -258,11 +265,32 @@ layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Equipment Controller/PanelContainer/VBoxContainer"]
+[node name="Item Slot Container4" parent="Equipment Controller/PanelContainer/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("inventoryControllerRef") instance=ExtResource("5_pip8b")]
 layout_mode = 2
+slotItemType = 1
+inventoryControllerRef = NodePath("../../../../..")
+slotName = "Weapon"
+
+[node name="Item Slot Container5" parent="Equipment Controller/PanelContainer/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("inventoryControllerRef") instance=ExtResource("5_pip8b")]
+layout_mode = 2
+slotItemType = 2
+inventoryControllerRef = NodePath("../../../../..")
+slotName = "Armour"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Equipment Controller/PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Item Slot Container5" parent="Equipment Controller/PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("inventoryControllerRef") instance=ExtResource("5_pip8b")]
+layout_mode = 2
+inventoryControllerRef = NodePath("../../../../..")
+slotName = "Quick Use"
+
+[node name="Item Slot Container4" parent="Equipment Controller/PanelContainer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("inventoryControllerRef") instance=ExtResource("5_pip8b")]
+layout_mode = 2
+inventoryControllerRef = NodePath("../../../../..")
+slotName = "Quick Use"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Equipment Controller"]
 visible = false

@@ -151,6 +151,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("4_7org5")
 
 [node name="Hover Panel Seperator" type="Node" parent="."]

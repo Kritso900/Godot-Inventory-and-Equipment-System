@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmgfqhko45xmn"]
+[gd_scene load_steps=13 format=3 uid="uid://bmgfqhko45xmn"]
 
 [ext_resource type="Script" path="res://Scripts/Tab List/TL_Item-Text.gd" id="1_pj784"]
 [ext_resource type="Texture2D" uid="uid://dud6iteoibfab" path="res://Assets/Sprites/Square - Item Error.png" id="2_sp52d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5ljs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xokb4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qxb72"]
 
@@ -21,11 +23,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10pwe"]
 
-[node name="Item Container - Text" type="PanelContainer"]
+[node name="Item Container - Text" type="PanelContainer" node_paths=PackedStringArray("textRef", "imageRef", "nameRef", "selectButtonRef", "contextButtonRef")]
 offset_right = 976.0
 offset_bottom = 128.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_w5ljs")
 script = ExtResource("1_pj784")
+textRef = NodePath("HBox/Item Context Box/Description")
+imageRef = NodePath("HBox/Item Icon")
+nameRef = NodePath("HBox/Item Context Box/Item Name")
+selectButtonRef = NodePath("Context Button/Select Button")
+contextButtonRef = NodePath("Context Button")
 
 [node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -38,6 +45,7 @@ stretch_mode = 2
 [node name="Icon Separator" type="VSeparator" parent="HBox"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xokb4")
 
 [node name="Item Context Box" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
@@ -49,6 +57,7 @@ Sets how long the item's box is, allowing the content to fill the space created.
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 850
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xokb4")
 
 [node name="Item Name" type="Label" parent="HBox/Item Context Box"]
 layout_mode = 2
@@ -59,6 +68,7 @@ text = "Name of item"
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xokb4")
 
 [node name="Description" type="Label" parent="HBox/Item Context Box"]
 layout_mode = 2
@@ -100,3 +110,4 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_10pwe")
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 128
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xokb4")

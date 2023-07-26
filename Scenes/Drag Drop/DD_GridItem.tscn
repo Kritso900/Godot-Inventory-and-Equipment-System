@@ -52,16 +52,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_wl1vt")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_jnndt")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ldsil")
 
-[node name="ItemContextButton" type="MenuButton" parent="TextureRect/ItemPickupButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-action_mode = 1
-button_mask = 2
-
 [connection signal="pressed" from="TextureRect/ItemPickupButton" to="." method="_on_item_pickup_button_pressed"]
-[connection signal="button_down" from="TextureRect/ItemPickupButton/ItemContextButton" to="." method="_on_item_context_button_press"]

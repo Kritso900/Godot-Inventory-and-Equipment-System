@@ -43,13 +43,18 @@ layout_mode = 2
 
 [node name="Equip Button" type="Button" parent="Slot Background Container"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7bhen")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2horc")
 
 [node name="Unequip Button" type="Button" parent="Slot Background Container/Equip Button"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 button_mask = 2
 
 [node name="VSeparator" type="VSeparator" parent="Slot Background Container"]

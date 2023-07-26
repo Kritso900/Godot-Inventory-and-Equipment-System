@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqrvk7s2xpii8"]
+[gd_scene load_steps=14 format=3 uid="uid://dqrvk7s2xpii8"]
 
 [ext_resource type="Script" path="res://Scripts/Tab List/TL_Item-Stats.gd" id="1_yemjc"]
 [ext_resource type="Texture2D" uid="uid://dud6iteoibfab" path="res://Assets/Sprites/Square - Item Error.png" id="2_hx7tt"]
 [ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://Assets/Sprites/DD_1x1 Misc Item Error.png" id="3_3mb7k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qytwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgaha"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b4fsi"]
 
@@ -22,11 +24,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q8kt4"]
 
-[node name="Item Container - Stats" type="PanelContainer"]
+[node name="Item Container - Stats" type="PanelContainer" node_paths=PackedStringArray("stat1Ref", "stat2Ref", "imageRef", "nameRef", "selectButtonRef", "contextButtonRef")]
 offset_right = 976.0
 offset_bottom = 128.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qytwl")
 script = ExtResource("1_yemjc")
+stat1Ref = NodePath("HBox/VSplitContainer/HBoxContainer/Stat Container 1")
+stat2Ref = NodePath("HBox/VSplitContainer/HBoxContainer/Stat Container 2")
+imageRef = NodePath("HBox/TextureRect")
+nameRef = NodePath("HBox/VSplitContainer/Label")
+selectButtonRef = NodePath("Context Button/Select Button")
+contextButtonRef = NodePath("Context Button")
 
 [node name="HBox" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -39,6 +47,7 @@ stretch_mode = 2
 [node name="VSeparator" type="VSeparator" parent="HBox"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tgaha")
 
 [node name="VSplitContainer" type="VBoxContainer" parent="HBox"]
 layout_mode = 2
@@ -50,6 +59,7 @@ Sets how long the item's box is, allowing the content to fill the space created.
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 850
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tgaha")
 
 [node name="Label" type="Label" parent="HBox/VSplitContainer"]
 layout_mode = 2
@@ -60,6 +70,7 @@ text = "Name of item"
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tgaha")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBox/VSplitContainer"]
 layout_mode = 2
@@ -68,6 +79,7 @@ layout_mode = 2
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tgaha")
 
 [node name="Stat Container 1" type="HBoxContainer" parent="HBox/VSplitContainer/HBoxContainer"]
 layout_mode = 2
@@ -86,6 +98,7 @@ text = "404"
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tgaha")
 
 [node name="Stat Container 2" type="HBoxContainer" parent="HBox/VSplitContainer/HBoxContainer"]
 layout_mode = 2
@@ -133,3 +146,4 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_q8kt4")
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 128
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tgaha")

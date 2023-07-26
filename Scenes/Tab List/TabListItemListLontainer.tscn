@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0uxrjl3y4kh"]
+[gd_scene load_steps=6 format=3 uid="uid://c0uxrjl3y4kh"]
 
 [ext_resource type="Script" path="res://Scripts/Tab List/TL_ItemListContainer.gd" id="1_xpxgq"]
 [ext_resource type="PackedScene" uid="uid://dqrvk7s2xpii8" path="res://Scenes/Tab List/TL_Item-Stats.tscn" id="2_0asxo"]
 [ext_resource type="PackedScene" uid="uid://bmgfqhko45xmn" path="res://Scenes/Tab List/TL_Item-Text.tscn" id="3_pmjh5"]
 [ext_resource type="Texture2D" uid="uid://d075jsnfwo34e" path="res://Assets/Sprites/nS_MenuBack.png" id="4_0tucf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6k02"]
 
 [node name="Item List Container" type="PanelContainer" node_paths=PackedStringArray("itemListRef")]
 script = ExtResource("1_xpxgq")
@@ -29,6 +31,7 @@ patch_margin_bottom = 13
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 texture_filter = 1
 layout_mode = 2
+horizontal_scroll_mode = 0
 
 [node name="Item List" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -37,3 +40,4 @@ layout_mode = 2
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 650
+theme_override_styles/separator = SubResource("StyleBoxEmpty_d6k02")
