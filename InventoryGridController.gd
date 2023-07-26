@@ -1,6 +1,8 @@
 extends Node
 
-var HeldObject
+class_name DD_GridController
+
+var HeldObject:DD_GridItem
 var previousGridPosition:Vector2i
 var currentGridPosition:Vector2i
 var previousRotation:int
@@ -90,10 +92,10 @@ func _on_mouse_exited_inventory_grid():
 	mouseInGrid = false
 
 func CreateItem(_item:ItemResource):
-	var _dropItem = dropItem.instantiate()
+	var _dropItem:DD_GridItem = dropItem.instantiate()
 	_dropItem.item = _item
 	var _occupied:bool = true
-	var _lastGridPos
+	var _lastGridPos:Vector2i
 	var _cellsToOccupy:Array[Vector2i]
 	for _x in gridDimensions.x:
 		if !_occupied: break
@@ -130,7 +132,7 @@ func CreateItem(_item:ItemResource):
 			gridCellDict[_cell].tileRef.occupied = true
 		_dropItem.occupiedCells = _cellsToOccupy
 		_dropItem.locationCell = _lastGridPos
-	_dropItem = null
+	return _dropItem
 	
 	
 	

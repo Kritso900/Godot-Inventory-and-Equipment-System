@@ -6,12 +6,15 @@ res://Scenes/GridTile.tscn
 res://Souls inv.tscn
 res://TabListItem-Stats.tscn
 res://TabListItem-Text.tscn
-res://Tab List Inventory Controller.gd
-res://TabListItemList.gd
-res://TabListItem-Stats.gd
+res://TabListEquipSlotContainer.tscn
 res://TabList_ItemListContainer.gd
-res://TabListItem.gd
-res://Resources/Items/Breastplate.tres
-res://Scripts/Globals.gd
+res://Scenes/Tab List Inventory/TabListItemListLontainer.tscn
+res://TabListEquipItemSlot.gd
+res://Tab List Inventory Controller.gd
 res://Resources/Items/Potion.tres
-res://Scripts/ItemResource.gd
+res://DragDropEquipSlotContainer.tscn
+res://DragDropController.gd
+res://DD_EquipSlotContainer.gd
+res://Scenes/Drag Drop Inventory/DragDropItem.gd
+res://InventoryGridController.gd
+res://DD_PlayerStats.gd

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bmgfqhko45xmn"]
 
 [ext_resource type="Script" path="res://TabListItem-Text.gd" id="1_jvhad"]
-[ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://1x1 Misc Item Error.png" id="1_ynen7"]
+[ext_resource type="Texture2D" uid="uid://dud6iteoibfab" path="res://Square - Item Error.png" id="2_v7o4o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5ljs"]
 
@@ -37,7 +37,7 @@ layout_mode = 2
 
 [node name="Item Icon" type="TextureRect" parent="HBox"]
 layout_mode = 2
-texture = ExtResource("1_ynen7")
+texture = ExtResource("2_v7o4o")
 stretch_mode = 2
 
 [node name="Icon Separator" type="VSeparator" parent="HBox"]

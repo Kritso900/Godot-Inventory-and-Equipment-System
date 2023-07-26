@@ -4,8 +4,12 @@ extends Resource
 class_name ItemResource
 
 const  ITEM:GDScript = preload("res://Scripts/ItemResource.gd")
-# The image that will be used inside the inventory
+
+# The image that will be used in most places, a 128x128 square sprite
 @export var itemUiImage:CompressedTexture2D
+
+# The image that will be used inside the grid inventory, each grid square is 64x64
+@export var itemUiImageGrid:CompressedTexture2D
 
 # The name that will be displayed inside the inventory
 @export var itemName:String
@@ -42,7 +46,8 @@ const  ITEM:GDScript = preload("res://Scripts/ItemResource.gd")
 
 # All variables in the resource must have a default value or they will create problems
 func _init():
-	itemUiImage = preload("res://1x1 Misc Item Error.png")
+	itemUiImage = preload("res://Square - Item Error.png")
+	itemUiImageGrid = preload("res://1x1 Misc Item Error.png")
 	itemName = ""
 	itemTooltip = ""
 	itemType = Globals.ItemTypes.CONSUMABLE

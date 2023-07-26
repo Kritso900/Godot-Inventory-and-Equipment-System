@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://chss8lyk47l3p"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://chss8lyk47l3p"]
 
 [ext_resource type="Texture2D" uid="uid://k3natvvgnn5j" path="res://1x1 Potion.png" id="1_1er6u"]
+[ext_resource type="Texture2D" uid="uid://bdym4et2ds8u5" path="res://Square Potion.png" id="1_ge7sl"]
 [ext_resource type="Script" path="res://Scripts/ItemResource.gd" id="2_td1xm"]
 
 [resource]
 script = ExtResource("2_td1xm")
-itemUiImage = ExtResource("1_1er6u")
+itemUiImage = ExtResource("1_ge7sl")
+itemUiImageGrid = ExtResource("1_1er6u")
 itemName = "Suspicious Potion"
 itemTooltip = "An odd potion with a squishy crystal suspended inside, drinking is highly inadvisable."
-itemType = 2
+itemType = 0
 itemDragDropGridSize = Vector2i(1, 1)
 tabListShowStats = false
-exampleInt = 20
+exampleInt = 0
 exampleFloat = 0.0
 exampleBool = false
 isItemUsable = true

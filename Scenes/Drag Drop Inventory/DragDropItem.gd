@@ -1,5 +1,7 @@
 extends Control
 
+class_name DD_GridItem
+
 var isInitialised:bool
 @export var item:ItemResource
 @onready var imageRef:TextureRect = $TextureRect
@@ -8,7 +10,7 @@ var occupiedCells:Array[Vector2i]
 
 func setup(gridCellSize:Vector2):
 	if(item):
-		$TextureRect.set_texture(item.itemUiImage)
+		$TextureRect.set_texture(item.itemUiImageGrid)
 		$TextureRect.size = gridCellSize * Vector2(item.itemDragDropGridSize)
 		$TextureRect/ItemPickupButton.tooltip_text = setupTooltip()
 
@@ -20,12 +22,12 @@ func _on_item_context_button_press():
 func setupTooltip():
 	var _tooltipText:String = item.itemName
 	match item.itemType:
-		Globals.ItemTypes.TYPE1:
+		Globals.ItemTypes.ARMOUR:
 			_tooltipText +=  "\nDoes thing: " + ("Yes" if item.exampleBool else "No")
 			_tooltipText +=  "\nThinginess: " + str(item.exampleFloat)
-		Globals.ItemTypes.TYPE2:
+		Globals.ItemTypes.WEAPON:
 			_tooltipText += "\nDisappointment: " + str(item.exampleInt)
-		Globals.ItemTypes.TYPE3:
+		Globals.ItemTypes.CONSUMABLE:
 			pass
 	_tooltipText += "\n" + item.itemTooltip
 	return _tooltipText

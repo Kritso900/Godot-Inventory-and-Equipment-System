@@ -3,8 +3,8 @@ extends "res://TabListItem.gd"
 @export var stat1Ref:HBoxContainer
 @export var stat2Ref:HBoxContainer
 
-func Setup(_item):
-	super(_item)
+func Setup(_item, _controllerRef):
+	super(_item, _controllerRef)
 	setupStat(stat1Ref, preload("res://1x1 Misc Item Error.png"), _item.exampleInt)
 	setupStat(stat2Ref, preload("res://1x1 Misc Item Error.png"), _item.exampleFloat)
 

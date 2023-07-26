@@ -1,5 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://5cl6n4jpf0dc"]
+[gd_scene load_steps=5 format=3 uid="uid://5cl6n4jpf0dc"]
 
+[ext_resource type="Texture2D" uid="uid://d075jsnfwo34e" path="res://nS_MenuBack.png" id="2_qk6us"]
+[ext_resource type="PackedScene" uid="uid://h6d2qxf22hsf" path="res://DragDropEquipSlotContainer.tscn" id="3_1ov8o"]
+[ext_resource type="Script" path="res://DD_PlayerStats.gd" id="3_e8016"]
 [ext_resource type="PackedScene" uid="uid://d303vkpxby4mv" path="res://Scenes/Drag Drop Inventory/InventoryGridContainer.tscn" id="4_1wufd"]
 
 [node name="Control" type="Control"]
@@ -18,3 +21,125 @@ offset_top = 76.0
 offset_right = 478.0
 offset_bottom = 460.0
 scale = Vector2(1, 0.994057)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 600.0
+offset_top = 50.0
+offset_right = 1100.0
+offset_bottom = 550.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_qk6us")
+patch_margin_left = 12
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Drag Drop Equip Slot" parent="PanelContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("3_1ov8o")]
+layout_mode = 2
+slotName = "Weapon"
+slotItemType = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Drag Drop Equip Slot2" parent="PanelContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_1ov8o")]
+layout_mode = 2
+slotName = "Armour"
+slotItemType = 2
+
+[node name="Stats Container" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 1143.0
+offset_top = 51.0
+offset_right = 1573.0
+offset_bottom = 717.0
+script = ExtResource("3_e8016")
+
+[node name="MarginContainer" type="MarginContainer" parent="Stats Container"]
+layout_mode = 2
+theme_override_constants/margin_left = -8
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = -8
+theme_override_constants/margin_bottom = -8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Stats Container/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_qk6us")
+patch_margin_left = 12
+patch_margin_top = 13
+patch_margin_right = 12
+patch_margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats Container"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Stats Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Stats Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Stats Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Int Stat Box" type="HBoxContainer" parent="Stats Container/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Stat Name" type="Label" parent="Stats Container/VBoxContainer/Int Stat Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Int:"
+
+[node name="Stat Value" type="Label" parent="Stats Container/VBoxContainer/Int Stat Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "404"
+
+[node name="HSeparator3" type="HSeparator" parent="Stats Container/VBoxContainer"]
+layout_mode = 2
+
+[node name="Float Stat Box" type="HBoxContainer" parent="Stats Container/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Stat Name" type="Label" parent="Stats Container/VBoxContainer/Float Stat Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Float:"
+
+[node name="Stat Value" type="Label" parent="Stats Container/VBoxContainer/Float Stat Box"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "404"
+
+[node name="HSeparator4" type="HSeparator" parent="Stats Container/VBoxContainer"]
+layout_mode = 2

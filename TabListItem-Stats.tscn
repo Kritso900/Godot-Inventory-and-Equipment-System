@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqrvk7s2xpii8"]
+[gd_scene load_steps=13 format=3 uid="uid://dqrvk7s2xpii8"]
 
 [ext_resource type="Script" path="res://TabListItem-Stats.gd" id="1_6g6xv"]
 [ext_resource type="Texture2D" uid="uid://ihpyvr2x2grk" path="res://1x1 Misc Item Error.png" id="1_sb0b0"]
+[ext_resource type="Texture2D" uid="uid://dud6iteoibfab" path="res://Square - Item Error.png" id="2_7va28"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qytwl"]
 
@@ -38,7 +39,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBox"]
 layout_mode = 2
-texture = ExtResource("1_sb0b0")
+texture = ExtResource("2_7va28")
 stretch_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="HBox"]

@@ -1,18 +1,20 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bh21k1wdlf7ne"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://bh21k1wdlf7ne"]
 
+[ext_resource type="Texture2D" uid="uid://b81fsjixgu4ql" path="res://Square - Chest Breastplate-export.png" id="1_5np7t"]
 [ext_resource type="Texture2D" uid="uid://b3t4npyaj87sk" path="res://2x3 Chest Breastplate.png" id="1_lpo4q"]
 [ext_resource type="Script" path="res://Scripts/ItemResource.gd" id="2_rn7em"]
 
 [resource]
 script = ExtResource("2_rn7em")
-itemUiImage = ExtResource("1_lpo4q")
+itemUiImage = ExtResource("1_5np7t")
+itemUiImageGrid = ExtResource("1_lpo4q")
 itemName = "Plate armour"
 itemTooltip = "Thick and heavy plate armour that has seen many battles, and even more repairs"
-itemType = 1
+itemType = 2
 itemDragDropGridSize = Vector2i(2, 3)
 tabListShowStats = true
 exampleInt = 30
-exampleFloat = 12.0
+exampleFloat = 0.0
 exampleBool = false
 isItemUsable = false
 isKeyItem = false

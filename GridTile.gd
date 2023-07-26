@@ -1,4 +1,7 @@
 extends Node
+
+class_name DD_GridTile
+
 var position:Vector2i
 var occupied:bool
 

@@ -1,39 +1,48 @@
 2a60927148abd1d33b818b535e306557
-::res://::1690078179
-1x1 Misc Item Error.png::CompressedTexture2D::576916137838480972::1689521079::1689521079::1::::<><>::
-1x1 Potion.png::CompressedTexture2D::760481365747196001::1690078166::1690078179::1::::<><>::
-1x2 Weapon Estoc.png::CompressedTexture2D::4012408156447906977::1689521079::1689521079::1::::<><>::
-2x3 Chest Breastplate.png::CompressedTexture2D::4392716315935054470::1689521079::1689521079::1::::<><>::
-DragDropController.gd::GDScript::-1::1690032064::0::1::::<>Node<>::
-GridTile.gd::GDScript::-1::1690058117::0::1::::<>Node<>::
-icon.svg::CompressedTexture2D::7735397670768859503::1689521079::1689521122::1::::<><>::
-InventoryGridBackground.png::CompressedTexture2D::1641111930191926165::1689521079::1689521079::1::::<><>::
-InventoryGridController.gd::GDScript::-1::1690032064::0::1::::<>Node<>::
-Mini Error.png::CompressedTexture2D::9139048629031795157::1690032064::1690032064::1::::<><>::
-nS_Button.png::CompressedTexture2D::1872867111144381034::1689521079::1689521079::1::::<><>::
-nS_MenuBack.png::CompressedTexture2D::8981881777848083710::1689521079::1689521079::1::::<><>::
-Souls inv.tscn::PackedScene::6736420247026086556::1690078208::0::1::::<><>::uid://ihpyvr2x2grk<>uid://d075jsnfwo34e<>res://Tab List Inventory Controller.gd<>uid://r4c686v5x0yv<>uid://bmgfqhko45xmn<>uid://bh21k1wdlf7ne<>uid://chss8lyk47l3p<>uid://dqrvk7s2xpii8<>res://TabList_ItemListContainer.gd
-Tab List Inventory Controller.gd::GDScript::-1::1690063715::0::1::::<>Node<>::
-TabListItem-Stats.gd::GDScript::-1::1690073328::0::1::::<>PanelContainer<>::
-TabListItem-Stats.tscn::PackedScene::8318672595705757593::1690073366::0::1::::<><>::res://TabListItem-Stats.gd<>uid://ihpyvr2x2grk
-TabListItem-Text.gd::GDScript::-1::1690044531::0::1::::<>PanelContainer<>::
-TabListItem-Text.tscn::PackedScene::3241405615327709953::1690073366::0::1::::<><>::res://TabListItem-Text.gd<>uid://ihpyvr2x2grk
-TabListItem.gd::GDScript::-1::1690068189::0::1::::<>PanelContainer<>::
-TabList_ItemListContainer.gd::GDScript::-1::1690063790::0::1::::<>PanelContainer<>::
-TestCharacter.gd::GDScript::-1::1689521079::0::1::::<>Node<>::
-::res://Resources/::1689521079
-::res://Resources/Items/::1690078168
-Breastplate.tres::Resource/ItemResource::2935078688013959542::1690068411::0::1::::<><>::uid://b3t4npyaj87sk<>res://Scripts/ItemResource.gd
-DebugItem.tres::Resource/Resource::5302474524820699651::1689521079::0::1::::<><>::res://Scripts/ItemResource.gd
-Estoc.tres::Resource/Resource::1253255872465528097::1689521079::0::1::::<><>::uid://bxfv1ngqptb50<>res://Scripts/ItemResource.gd
-::res://Scenes/::1690073365
-control.tscn::PackedScene::2110518039212643268::1690073365::0::1::::<><>::uid://d303vkpxby4mv
-GridTile.tscn::PackedScene::7231679377216657761::1690073365::0::1::::<><>::uid://xm74yaytlqj2<>res://GridTile.gd
-::res://Scenes/Drag Drop Inventory/::1690073365
-DragDropItem.gd::GDScript::-1::1690032064::0::1::::<>Control<>::
-DragDropItem.tscn::PackedScene::4079001655735379868::1690073365::0::1::::<><>::res://Scenes/Drag Drop Inventory/DragDropItem.gd<>uid://ihpyvr2x2grk
-InventoryGridContainer.tscn::PackedScene::9177897243718064145::1690073365::0::1::::<><>::res://InventoryGridController.gd<>uid://d075jsnfwo34e<>uid://dbbcx5od128lp<>uid://dihc4ted4eodb
-::res://Scripts/::1690077977
-Globals.gd::GDScript::-1::1690077977::0::1::::<>Node<>::
-ItemResource.gd::GDScript::-1::1690052105::0::1::::ItemResource<>Resource<>::
-SignalBus.gd::GDScript::-1::1690032064::0::1::::<>Node<>::
+::res://::1690324471
+1x1 Misc Item Error.png::CompressedTexture2D::576916137838480972::1689625456::1689625456::1::::<><>::
+1x1 Potion.png::CompressedTexture2D::760481365747196001::1690139118::1690139118::1::::<><>::
+1x2 Weapon Estoc.png::CompressedTexture2D::4012408156447906977::1689625456::1689625456::1::::<><>::
+2x3 Chest Breastplate.png::CompressedTexture2D::4392716315935054470::1689625456::1689625456::1::::<><>::
+DragDropController.gd::GDScript::-1::1689822042::0::1::::<>Node<>::
+GridTile.gd::GDScript::-1::1690324080::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::7735397670768859503::1689625456::1689625456::1::::<><>::
+InventoryGridBackground.png::CompressedTexture2D::1641111930191926165::1689625456::1689625456::1::::<><>::
+InventoryGridController.gd::GDScript::-1::1689821919::0::1::::<>Node<>::
+Mini Error.png::CompressedTexture2D::9139048629031795157::1689926332::1689926332::1::::<><>::
+nS_Button.png::CompressedTexture2D::1872867111144381034::1689625456::1689625456::1::::<><>::
+nS_MenuBack.png::CompressedTexture2D::8981881777848083710::1689625456::1689625456::1::::<><>::
+DragDropEquipSlotContainer.tscn::PackedScene::555548859424243309::1690330673::0::1::::<><>::res://TabListEquipItemSlot.gd<>uid://1xh326wk3yec
+Souls inv.tscn::PackedScene::6736420247026086556::1690324471::0::1::::<><>::uid://ihpyvr2x2grk<>uid://d075jsnfwo34e<>res://Tab List Inventory Controller.gd<>uid://c0uxrjl3y4kh<>uid://deajpwo0gxsgt
+Square - Chest Breastplate-export.png::CompressedTexture2D::4756662560730283903::1690146189::1690146189::1::::<><>::
+Square - Item Error.png::CompressedTexture2D::8571129574998831837::1690146328::1690146328::1::::<><>::
+Square - Weapon Estoc.png::CompressedTexture2D::4693559869327461668::1690146189::1690146189::1::::<><>::
+Square Potion.png::CompressedTexture2D::2647312913317268650::1690146161::1690146164::1::::<><>::
+Tab List Inventory Controller.gd::GDScript::-1::1690324283::0::1::::TL_InventoryController<>Node<>::
+TabListEquipItemSlot.gd::GDScript::-1::1690324213::0::1::::TL_EquipItemSlot<>VBoxContainer<>::
+TabListEquipSlotContainer.tscn::PackedScene::7440591843760697951::1690324471::0::1::::<><>::res://TabListEquipItemSlot.gd<>uid://1xh326wk3yec
+TabListItem-Stats.gd::GDScript::-1::1690297564::0::1::::<>PanelContainer<>::
+TabListItem-Stats.tscn::PackedScene::8318672595705757593::1690324471::0::1::::<><>::res://TabListItem-Stats.gd<>uid://ihpyvr2x2grk<>uid://dud6iteoibfab
+TabListItem-Text.gd::GDScript::-1::1690297568::0::1::::<>PanelContainer<>::
+TabListItem-Text.tscn::PackedScene::3241405615327709953::1690324471::0::1::::<><>::res://TabListItem-Text.gd<>uid://dud6iteoibfab
+TabListItem.gd::GDScript::-1::1690322388::0::1::::TL_Item<>PanelContainer<>::
+TabList_ItemListContainer.gd::GDScript::-1::1690324167::0::1::::TL_ItemListContainer<>PanelContainer<>::
+TestCharacter.gd::GDScript::-1::1689625456::0::1::::<>Node<>::
+::res://Resources/::1689625456
+::res://Resources/Items/::1690324320
+Breastplate.tres::Resource/Resource::2935078688013959542::1690322110::0::1::::<><>::uid://b81fsjixgu4ql<>uid://b3t4npyaj87sk<>res://Scripts/ItemResource.gd
+Estoc.tres::Resource/Resource::1253255872465528097::1690322110::0::1::::<><>::uid://b74uiltw1ok4s<>uid://bxfv1ngqptb50<>res://Scripts/ItemResource.gd
+Potion.tres::Resource/ItemResource::5302474524820699651::1690324320::0::1::::<><>::uid://k3natvvgnn5j<>uid://bdym4et2ds8u5<>res://Scripts/ItemResource.gd
+::res://Scenes/::1690324471
+control.tscn::PackedScene::2110518039212643268::1690324471::0::1::::<><>::uid://d303vkpxby4mv
+GridTile.tscn::PackedScene::7231679377216657761::1690324471::0::1::::<><>::uid://xm74yaytlqj2<>res://GridTile.gd
+::res://Scenes/Drag Drop Inventory/::1690324471
+DragDropItem.gd::GDScript::-1::1690228032::0::1::::<>Control<>::
+DragDropItem.tscn::PackedScene::4079001655735379868::1690324471::0::1::::<><>::res://Scenes/Drag Drop Inventory/DragDropItem.gd<>uid://ihpyvr2x2grk
+InventoryGridContainer.tscn::PackedScene::9177897243718064145::1690324471::0::1::::<><>::res://InventoryGridController.gd<>uid://d075jsnfwo34e<>uid://dbbcx5od128lp<>uid://dihc4ted4eodb
+::res://Scenes/Tab List Inventory/::1690324471
+TabListItemListLontainer.tscn::PackedScene::193243451581077487::1690324471::0::1::::<><>::res://TabList_ItemListContainer.gd<>uid://dqrvk7s2xpii8<>uid://bmgfqhko45xmn<>uid://d075jsnfwo34e
+::res://Scripts/::1690227962
+Globals.gd::GDScript::-1::1690139118::0::1::::<>Node<>::
+ItemResource.gd::GDScript::-1::1690227962::0::1::::ItemResource<>Resource<>::
+SignalBus.gd::GDScript::-1::1689821923::0::1::::<>Node<>::
