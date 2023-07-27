@@ -44,6 +44,7 @@ func equipItem(_item:ItemResource):
 	equippedItemImageRef.texture = equippedItem.itemUiImage
 	inventoryControllerRef.PlayerStatRebuild()
 
+# Called when right clicking on an equip slot
 func UnequipItem():
 	equippedItem = null
 	equippedItemImageRef.texture = null

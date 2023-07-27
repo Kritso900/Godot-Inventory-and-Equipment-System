@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1690392249
+::res://::1690409199
 ::res://Assets/::1690337111
 ::res://Assets/Sprites/::1690337204
 DD_1x1 Misc Item Error.png::CompressedTexture2D::576916137838480972::1689625456::1690337204::1::::<><>::
@@ -21,32 +21,32 @@ Breastplate.tres::Resource/Resource::2935078688013959542::1690337203::0::1::::<>
 Estoc.tres::Resource/Resource::1253255872465528097::1690337203::0::1::::<><>::uid://b74uiltw1ok4s<>uid://bxfv1ngqptb50<>res://Scripts/ItemResource.gd
 Potion.tres::Resource/Resource::5302474524820699651::1690337203::0::1::::<><>::uid://k3natvvgnn5j<>uid://bdym4et2ds8u5<>res://Scripts/ItemResource.gd
 ::res://Scenes/::1690337306
-::res://Scenes/Drag Drop/::1690392102
-DD_EquipSlotContainer.tscn::PackedScene::3287662705944534272::1690392102::0::1::::<><>::res://Scripts/Drag Drop/DD_EquipSlot.gd<>uid://1xh326wk3yec
-DD_ExampleScene.tscn::PackedScene::2110518039212643268::1690392102::0::1::::<><>::uid://d303vkpxby4mv<>uid://d075jsnfwo34e<>uid://bm3tlbbr85qvw<>res://Scripts/Drag Drop/DD_PlayerStats.gd
-DD_GridContainer.tscn::PackedScene::9177897243718064145::1690392102::0::1::::<><>::res://Scripts/Drag Drop/DD_GridController.gd<>uid://d075jsnfwo34e<>uid://dbbcx5od128lp<>uid://dihc4ted4eodb
-DD_GridItem.tscn::PackedScene::4079001655735379868::1690392102::0::1::::<><>::res://Scripts/Drag Drop/DD_GridItem.gd<>uid://ihpyvr2x2grk
+::res://Scenes/Drag Drop/::1690408981
+DD_EquipSlotContainer.tscn::PackedScene::3287662705944534272::1690404239::0::1::::<><>::res://Scripts/Drag Drop/DD_EquipSlot.gd<>uid://1xh326wk3yec
+DD_ExampleScene.tscn::PackedScene::2110518039212643268::1690408981::0::1::::<><>::uid://d303vkpxby4mv<>uid://d075jsnfwo34e<>uid://bm3tlbbr85qvw<>res://Scripts/Drag Drop/DD_PlayerStats.gd
+DD_GridContainer.tscn::PackedScene::9177897243718064145::1690404239::0::1::::<><>::res://Scripts/Drag Drop/DD_GridController.gd<>uid://d075jsnfwo34e<>uid://dbbcx5od128lp<>uid://dihc4ted4eodb
+DD_GridItem.tscn::PackedScene::4079001655735379868::1690408669::0::1::::<><>::res://Scripts/Drag Drop/DD_GridItem.gd<>uid://ihpyvr2x2grk
 DD_GridTile.tscn::PackedScene::7231679377216657761::1690337203::0::1::::<><>::uid://xm74yaytlqj2<>res://Scripts/Drag Drop/DD_GridTile.gd
-::res://Scenes/Tab List/::1690392102
-TabListItemListLontainer.tscn::PackedScene::193243451581077487::1690392102::0::1::::<><>::res://Scripts/Tab List/TL_ItemListContainer.gd<>uid://dqrvk7s2xpii8<>uid://bmgfqhko45xmn<>uid://d075jsnfwo34e
-TL_EquipSlotContainer.tscn::PackedScene::7440591843760697951::1690392102::0::1::::<><>::res://Scripts/Tab List/TL_EquipItemSlot.gd<>uid://1xh326wk3yec
-TL_ExampleScene.tscn::PackedScene::6736420247026086556::1690392102::0::1::::<><>::res://Scripts/Tab List/TL_InventoryController.gd<>uid://d075jsnfwo34e<>uid://ihpyvr2x2grk<>uid://c0uxrjl3y4kh<>uid://deajpwo0gxsgt
-TL_Item-Stats.tscn::PackedScene::8318672595705757593::1690392102::0::1::::<><>::res://Scripts/Tab List/TL_Item-Stats.gd<>uid://dud6iteoibfab<>uid://ihpyvr2x2grk
-TL_Item-Text.tscn::PackedScene::3241405615327709953::1690392102::0::1::::<><>::res://Scripts/Tab List/TL_Item-Text.gd<>uid://dud6iteoibfab
-::res://Scripts/::1690336817
-Globals.gd::GDScript::-1::1690139118::0::1::::<>Node<>::
+::res://Scenes/Tab List/::1690408981
+TabListItemListLontainer.tscn::PackedScene::193243451581077487::1690404239::0::1::::<><>::res://Scripts/Tab List/TL_ItemListContainer.gd<>uid://dqrvk7s2xpii8<>uid://bmgfqhko45xmn<>uid://d075jsnfwo34e
+TL_EquipSlotContainer.tscn::PackedScene::7440591843760697951::1690404284::0::1::::<><>::res://Scripts/Tab List/TL_EquipItemSlot.gd<>uid://1xh326wk3yec
+TL_ExampleScene.tscn::PackedScene::6736420247026086556::1690408981::0::1::::<><>::res://Scripts/Tab List/TL_InventoryController.gd<>uid://d075jsnfwo34e<>uid://ihpyvr2x2grk<>uid://c0uxrjl3y4kh<>uid://deajpwo0gxsgt
+TL_Item-Stats.tscn::PackedScene::8318672595705757593::1690404239::0::1::::<><>::res://Scripts/Tab List/TL_Item-Stats.gd<>uid://dud6iteoibfab<>uid://ihpyvr2x2grk
+TL_Item-Text.tscn::PackedScene::3241405615327709953::1690404239::0::1::::<><>::res://Scripts/Tab List/TL_Item-Text.gd<>uid://dud6iteoibfab
+::res://Scripts/::1690403677
+Globals.gd::GDScript::-1::1690403677::0::1::::<>Node<>::
 ItemResource.gd::GDScript::-1::1690336568::0::1::::ItemResource<>Resource<>::
-::res://Scripts/Drag Drop/::1690337843
-DD_EquipSlot.gd::GDScript::-1::1690337843::0::1::::DD_EquipSlot<>VBoxContainer<>::
-DD_GridController.gd::GDScript::-1::1690337689::0::1::::DD_GridController<>Node<>::
-DD_GridItem.gd::GDScript::-1::1690337813::0::1::::DD_GridItem<>Control<>::
-DD_GridTile.gd::GDScript::-1::1690337447::0::1::::DD_GridTile<>Node<>::
-DD_InventoryController.gd::GDScript::-1::1690336649::0::1::::<>Node<>::
-DD_PlayerStats.gd::GDScript::-1::1690337465::0::1::::DD_PlayerStats<>PanelContainer<>::
-::res://Scripts/Tab List/::1690391457
-TL_EquipItemSlot.gd::GDScript::-1::1690331012::0::1::::TL_EquipItemSlot<>VBoxContainer<>::
-TL_InventoryController.gd::GDScript::-1::1690324283::0::1::::TL_InventoryController<>Node<>::
-TL_Item-Stats.gd::GDScript::-1::1690391457::0::1::::<>PanelContainer<>::
-TL_Item-Text.gd::GDScript::-1::1690391420::0::1::::<>PanelContainer<>::
-TL_Item.gd::GDScript::-1::1690322388::0::1::::TL_Item<>PanelContainer<>::
-TL_ItemListContainer.gd::GDScript::-1::1690324167::0::1::::TL_ItemListContainer<>PanelContainer<>::
+::res://Scripts/Drag Drop/::1690404152
+DD_EquipSlot.gd::GDScript::-1::1690403713::0::1::::DD_EquipSlot<>VBoxContainer<>::
+DD_GridController.gd::GDScript::-1::1690403739::0::1::::DD_GridController<>Node<>::
+DD_GridItem.gd::GDScript::-1::1690403762::0::1::::DD_GridItem<>Control<>::
+DD_GridTile.gd::GDScript::-1::1690403783::0::1::::DD_GridTile<>Node<>::
+DD_InventoryController.gd::GDScript::-1::1690403847::0::1::::<>Node<>::
+DD_PlayerStats.gd::GDScript::-1::1690404152::0::1::::DD_PlayerStats<>PanelContainer<>::
+::res://Scripts/Tab List/::1690408667
+TL_EquipItemSlot.gd::GDScript::-1::1690404796::0::1::::TL_EquipItemSlot<>VBoxContainer<>::
+TL_InventoryController.gd::GDScript::-1::1690407561::0::1::::TL_InventoryController<>Node<>::
+TL_Item-Stats.gd::GDScript::-1::1690407751::0::1::::<>PanelContainer<>::
+TL_Item-Text.gd::GDScript::-1::1690407811::0::1::::<>PanelContainer<>::
+TL_Item.gd::GDScript::-1::1690408130::0::1::::TL_Item<>PanelContainer<>::
+TL_ItemListContainer.gd::GDScript::-1::1690408667::0::1::::TL_ItemListContainer<>PanelContainer<>::

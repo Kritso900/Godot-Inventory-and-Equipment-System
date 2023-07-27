@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://deajpwo0gxsgt"]
+[gd_scene load_steps=10 format=3 uid="uid://deajpwo0gxsgt"]
 
 [ext_resource type="Script" path="res://Scripts/Tab List/TL_EquipItemSlot.gd" id="1_wmdfx"]
 [ext_resource type="Texture2D" uid="uid://1xh326wk3yec" path="res://Assets/Sprites/nS_Button.png" id="2_np4vg"]
@@ -6,6 +6,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bhen"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2horc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqnfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dyvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5dxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_re8x0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdb2h"]
 
@@ -55,6 +63,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gqnfw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7dyvr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t5dxy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_re8x0")
 button_mask = 2
 
 [node name="VSeparator" type="VSeparator" parent="Slot Background Container"]
